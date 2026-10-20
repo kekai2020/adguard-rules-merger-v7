@@ -76,11 +76,12 @@ whitelist_audit:
   concurrency: 20
   # Layer 1: DNS resolution (free, keyless)
   use_dns: true
-  # Optional DNS-over-HTTPS JSON resolver (NextDNS profile). Leave empty to
-  # use the system resolver. When set, NXDOMAIN/private-IP signals are read
-  # through this endpoint; any DoH failure falls back to system DNS.
-  # Example: https://dns.nextdns.io/3fef68
-  doh_endpoint: ""
+  # Optional DNS-over-HTTPS JSON resolver: NextDNS profile endpoint
+  # (https://dns.nextdns.io/<profile-id>). When set, NXDOMAIN/private-IP
+  # signals are read through this encrypted channel; any DoH failure
+  # automatically falls back to the system resolver (never blocks a check).
+  # Leave empty to use the system resolver only.
+  doh_endpoint: "https://dns.nextdns.io/3fef68"
   # Layer 2: Threat intelligence (free, keyless)
   use_urlhaus: true
   use_threatfox: true

@@ -150,6 +150,104 @@ def _dup_legend_html() -> str:
     )
 
 
+# ── Defense layer catalog (single source of truth for HTML + MD) ──────────
+# Row tuple: (enabled_key, name, description, cost, hit_keys, always_on,
+# no_count). ``enabled_key=None`` marks an always-on built-in layer with no
+# switch in ``layers_enabled``. ``hit_keys`` are summed from ``layer_hits``;
+# an empty tuple means the layer has no independent counter (show "—").
+# Order, names, descriptions and cost labels below are shared verbatim by
+# the HTML table and the Markdown table so the two stay byte-aligned.
+DEFENSE_LAYERS: list[tuple[str | None, str, str, str, tuple[str, ...], bool, bool]] = [
+    (
+        "dns",
+        "DNS 解析",
+        "NXDOMAIN/私有IP检测",
+        "免费",
+        ("dns_nxdomain", "dns_private_ip"),
+        False,
+        False,
+    ),
+    ("doh", "DoH 加密解析", "NextDNS 加密传输，失败回退系统DNS", "免费", (), False, True),
+    ("urlhaus", "URLhaus", "恶意软件分发域名", "免费", ("urlhaus",), False, False),
+    ("threatfox", "ThreatFox", "C2 命令控制域名", "免费", ("threatfox",), False, False),
+    ("rdap", "RDAP 域名年龄", "新注册<30天标记", "免费", ("rdap_new_domain",), False, False),
+    (
+        "scam_check",
+        "MarketNow 诈骗检测",
+        "拼写劫持/可疑TLD/未注册",
+        "免费",
+        ("scam_check",),
+        False,
+        False,
+    ),
+    (
+        "dnsbl",
+        "DNSBL 黑名单",
+        "Spamhaus DBL + SURBL",
+        "免费",
+        ("dnsbl_malicious", "dnsbl_listed"),
+        False,
+        False,
+    ),
+    ("virustotal", "VirusTotal", "多引擎厂商信誉", "需API Key", ("virustotal",), False, False),
+    ("ai", "AI/LLM 分类", "低置信语义分类", "需API Key", ("ai_classified",), False, False),
+    (
+        None,
+        "内置离线启发式",
+        "滥用TLD/连字符等（常驻，无开关键）",
+        "免费",
+        ("heuristics",),
+        True,
+        False,
+    ),
+    (
+        "homograph",
+        "同形字/拼写劫持",
+        "Cyrillic/Greek 折叠+编辑距离",
+        "免费·默认开",
+        ("homograph",),
+        False,
+        False,
+    ),
+    ("dns_mx", "MX/SPF 缺失线索", "需 DNS，默认关", "可选", ("dns_mx_missing",), False, False),
+    ("gsb", "Google Safe Browsing", "在线情报", "需API Key", ("gsb",), False, False),
+    ("phishtank", "PhishTank", "钓鱼库", "需API Key", ("phishtank",), False, False),
+    ("urlscan", "urlscan 沙箱", "可疑页面扫描", "需API Key(可选)", ("urlscan",), False, False),
+    ("crtsh", "证书透明度 CT", "接口预留，默认关", "可选", (), False, True),
+]
+
+
+def _defense_layer_rows(layers_enabled: dict, layer_hits: dict) -> list[dict[str, Any]]:
+    """Render the shared defense-layer rows from ``layers_enabled`` / ``layer_hits``.
+
+    Presentation only: no statistic is recomputed here; ``dns`` aggregates
+    ``dns_nxdomain`` + ``dns_private_ip``, ``dnsbl`` aggregates
+    ``dnsbl_malicious`` + ``dnsbl_listed``, ``doh``/``crtsh`` have no
+    independent counter, and ``heuristics`` is always on.
+    """
+    rows: list[dict[str, Any]] = []
+    for key, name, desc, cost, hit_keys, always_on, no_count in DEFENSE_LAYERS:
+        enabled = True if always_on else bool(layers_enabled.get(key, False))
+        if no_count:
+            hits_display = "—"
+        elif enabled:
+            hits_display = str(sum(layer_hits.get(hk, 0) for hk in hit_keys))
+        else:
+            hits_display = "-"
+        rows.append(
+            {
+                "name": name,
+                "desc": desc,
+                "cost": cost,
+                "enabled": enabled,
+                "status": "✅ 启用" if enabled else "⬜ 未启用",
+                "status_cls": "tag-green" if enabled else "tag-blue",
+                "hits": hits_display,
+            }
+        )
+    return rows
+
+
 def _build_matrix(source_overlap: dict[str, Any]) -> dict[str, Any]:
     """Return {order, effective, get(a,b)->cell}. Builds from the pairwise
     matrix when present, falling back to the flat pairs list (V5.0 stats)."""
@@ -245,9 +343,7 @@ def generate_html_report(blocks, allows, outcome, analysis, include_time: bool =
                 f"<tr><td><code>${mod}</code></td><td>{cnt:,}</td><td>{pct:.1f}%</td></tr>\n"
             )
     else:
-        modifier_rows = (
-            '<tr><td colspan="3" style="text-align:center;color:#999">无带修饰符规则</td></tr>'
-        )
+        modifier_rows = '<tr><td colspan="3" class="empty-state">无带修饰符规则</td></tr>'
 
     # V5: conflict rows (multi-source)
     conflict_rows = ""
@@ -266,7 +362,7 @@ def generate_html_report(blocks, allows, outcome, analysis, include_time: bool =
             f"<td><span class='tag tag-yellow'>{ctype_tag}</span></td></tr>\n"
         )
     if not conflict_rows:
-        conflict_rows = '<tr><td colspan="6" style="text-align:center;color:#999">无冲突</td></tr>'
+        conflict_rows = '<tr><td colspan="6" class="empty-state">无冲突</td></tr>'
 
     # V5: whitelist audit rows
     whitelist_audit = getattr(outcome, "whitelist_audit", {}) or {}
@@ -300,7 +396,9 @@ def generate_html_report(blocks, allows, outcome, analysis, include_time: bool =
             f"<td>{_esc(', '.join(r.get('sources', [])))}</td></tr>\n"
         )
     if not audit_rows and whitelist_audit:
-        audit_rows = '<tr><td colspan="6" style="text-align:center;color:#999">白名单审计未启用或无域名规则</td></tr>'
+        audit_rows = (
+            '<tr><td colspan="6" class="empty-state">白名单审计未启用或无域名规则</td></tr>'
+        )
 
     # V5: whitelist category distribution rows
     cat_counts = audit_summary.get("category_counts", {})
@@ -319,9 +417,7 @@ def generate_html_report(blocks, allows, outcome, analysis, include_time: bool =
                 f"<td>{pct:.1f}%</td></tr>\n"
             )
     if not cat_rows:
-        cat_rows = (
-            '<tr><td colspan="4" style="text-align:center;color:#999">分类统计不可用</td></tr>'
-        )
+        cat_rows = '<tr><td colspan="4" class="empty-state">分类统计不可用</td></tr>'
 
     # V5: classification confidence distribution
     conf_dist = audit_summary.get("category_confidence", {})
@@ -342,33 +438,16 @@ def generate_html_report(blocks, allows, outcome, analysis, include_time: bool =
                 f"<td>{pct:.1f}%</td></tr>\n"
             )
 
-    # V5: multi-layer defense overview
+    # V5: multi-layer defense overview (shared catalog with the MD table)
     layers_enabled = audit_summary.get("layers_enabled", {})
     layer_hits = audit_summary.get("layer_hits", {})
     layer_rows = ""
     if layers_enabled:
-        layer_info = [
-            ("dns", "DNS 解析", "NXDOMAIN/私有IP检测", "免费"),
-            ("urlhaus", "URLhaus", "恶意软件分发域名", "免费"),
-            ("threatfox", "ThreatFox", "C2 命令控制域名", "免费"),
-            ("rdap", "RDAP 域名年龄", "新注册域名<30天标记", "免费"),
-            ("scam_check", "MarketNow 诈骗检测", "拼写劫持/可疑TLD/未注册", "免费"),
-            ("dnsbl", "DNSBL 黑名单", "Spamhaus DBL + SURBL 实时列名", "免费"),
-            ("virustotal", "VirusTotal", "多引擎厂商信誉", "需API Key"),
-            ("ai", "AI/LLM 分类", "低置信度域名语义分类", "需API Key"),
-        ]
-        for key, name, desc, cost in layer_info:
-            enabled = layers_enabled.get(key, False)
-            if key == "dns":
-                hits = layer_hits.get("dns_nxdomain", 0) + layer_hits.get("dns_private_ip", 0)
-            else:
-                hits = layer_hits.get(key, 0)
-            status = "✅ 启用" if enabled else "⬜ 未启用"
-            status_cls = "tag-green" if enabled else "tag-blue"
+        for row in _defense_layer_rows(layers_enabled, layer_hits):
             layer_rows += (
-                f"<tr><td>{name}</td><td>{desc}</td>"
-                f"<td><span class='tag {status_cls}'>{status}</span></td>"
-                f"<td>{cost}</td><td>{hits if enabled else '-'}</td></tr>\n"
+                f"<tr><td>{row['name']}</td><td>{row['desc']}</td>"
+                f"<td><span class='tag {row['status_cls']}'>{row['status']}</span></td>"
+                f"<td>{row['cost']}</td><td class='num'>{row['hits']}</td></tr>\n"
             )
 
     # V5: source effective coverage rows (raw vs effective vs self-dedup rate)
@@ -395,9 +474,7 @@ def generate_html_report(blocks, allows, outcome, analysis, include_time: bool =
             f"<td style='background:{bg_b}'>{p['rate_b']:.1f}%</td></tr>\n"
         )
     if not overlap_rows:
-        overlap_rows = (
-            '<tr><td colspan="5" style="text-align:center;color:#999">无源间重复</td></tr>'
-        )
+        overlap_rows = '<tr><td colspan="5" class="empty-state">无源间重复</td></tr>'
 
     # V5.2: full pairwise duplicate matrix (counts + rate + heat color)
     matrix = _build_matrix(source_overlap)
@@ -447,7 +524,7 @@ def generate_html_report(blocks, allows, outcome, analysis, include_time: bool =
         )
 
     if not m_order:
-        matrix_rows = '<tr><td style="text-align:center;color:#999">无源间重复</td></tr>'
+        matrix_rows = '<tr><td class="empty-state">无源间重复</td></tr>'
         matrix_header = ""
 
     failed_html = ""
@@ -481,31 +558,51 @@ body {{ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-seri
 .header .subtitle {{ opacity:.9; font-size:1.1em; }}
 .header .meta {{ margin-top:15px; font-size:.9em; opacity:.8; }}
 .stats-grid {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; margin-bottom:30px; }}
-.stat-card {{ background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.06); text-align:center; }}
-.stat-card .value {{ font-size:1.7em; font-weight:700; color:#3282b8; }}
+.stat-card {{ background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.06); text-align:center; border-top:3px solid #3282b8; }}
+.stat-card .value {{ font-size:1.7em; font-weight:700; color:#3282b8; font-variant-numeric:tabular-nums; }}
 .stat-card .label {{ color:#666; font-size:.82em; margin-top:4px; }}
 .bar-bg {{ background:#eef2f7; border-radius:4px; height:18px; overflow:hidden; min-width:80px; }}
 .bar-fill {{ background:linear-gradient(90deg,#3282b8,#5ba3d9); height:100%; border-radius:4px; }}
-.section {{ background:#fff; padding:25px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.06); margin-bottom:25px; }}
-.section h2 {{ margin-bottom:20px; color:#0f4c75; border-left:4px solid #3282b8; padding-left:15px; font-size:1.3em; }}
+.section {{ background:#fff; padding:25px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.06); margin-bottom:25px; scroll-margin-top:12px; }}
+.section h2 {{ margin-bottom:14px; color:#0f4c75; border-left:4px solid #3282b8; padding-left:15px; font-size:1.3em; }}
+.sec-no {{ display:inline-block; min-width:2.4em; color:#3282b8; font-weight:700; margin-right:4px; }}
+.sec-intro {{ font-size:.88em; color:#666; margin:0 0 14px; }}
+.toc {{ background:#fff; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.06); padding:14px 20px; margin-bottom:25px; }}
+.toc summary {{ cursor:pointer; font-weight:600; color:#0f4c75; }}
+.toc ol {{ margin:10px 0 0 22px; columns:2; column-gap:32px; }}
+.toc li {{ margin:4px 0; font-size:.9em; }}
+.toc a {{ color:#3282b8; text-decoration:none; }}
+.toc a:hover {{ text-decoration:underline; }}
 .two-col {{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:25px; }}
-@media(max-width:768px) {{ .two-col {{ grid-template-columns:1fr; }} }}
 .chart {{ width:100%; height:350px; }}
+.table-wrap {{ overflow-x:auto; margin-top:12px; }}
 table {{ width:100%; border-collapse:collapse; font-size:.9em; }}
 th,td {{ padding:9px 12px; text-align:left; border-bottom:1px solid #eee; }}
-th {{ background:#f8f9fa; font-weight:600; color:#555; }}
-tr:hover {{ background:#f8f9fa; }}
+thead th {{ background:#f8f9fa; font-weight:600; color:#555; position:sticky; top:0; z-index:1; }}
+tbody tr:nth-child(even) {{ background:#fafbfc; }}
+tbody tr:hover {{ background:#f0f5fa; }}
+.num {{ font-variant-numeric:tabular-nums; text-align:right; white-space:nowrap; }}
+.empty-state {{ text-align:center; color:#999; padding:18px 12px; }}
 .funnel-step {{ display:flex; align-items:center; padding:12px 15px; margin:8px 0; border-radius:8px; background:#f8f9fa; }}
 .funnel-step .step-name {{ flex:1; font-weight:500; }}
-.funnel-step .step-count {{ font-weight:700; color:#3282b8; }}
-.funnel-step .step-diff {{ width:120px; text-align:right; color:#28a745; font-size:.9em; }}
-.tag {{ display:inline-block; padding:2px 10px; border-radius:12px; font-size:.82em; font-weight:500; }}
+.funnel-step .step-count {{ font-weight:700; color:#3282b8; font-variant-numeric:tabular-nums; }}
+.funnel-step .step-diff {{ width:120px; text-align:right; color:#28a745; font-size:.9em; font-variant-numeric:tabular-nums; }}
+.tag {{ display:inline-block; padding:2px 10px; border-radius:12px; font-size:.82em; font-weight:500; white-space:nowrap; }}
 .tag-green {{ background:#d4edda; color:#155724; }}
 .tag-blue {{ background:#d1ecf1; color:#0c5460; }}
 .tag-yellow {{ background:#fff3cd; color:#856404; }}
 .tag-red {{ background:#f8d7da; color:#721c24; }}
 .footer {{ text-align:center; color:#999; padding:20px; font-size:.85em; }}
 .note {{ font-size:.85em; color:#888; margin-top:8px; }}
+@media(max-width:768px) {{
+  .two-col {{ grid-template-columns:1fr; }}
+  .toc ol {{ columns:1; }}
+  .header {{ padding:22px; }}
+  .header h1 {{ font-size:1.6em; }}
+  .section {{ padding:16px; }}
+  table {{ font-size:.82em; }}
+  th,td {{ padding:7px 8px; }}
+}}
 </style>
 </head>
 <body>
@@ -518,7 +615,26 @@ tr:hover {{ background:#f8f9fa; }}
 
   {failed_html}
 
-  <div class="stats-grid">
+  <details class="toc" open>
+    <summary>📑 报告目录（点击折叠 / 展开）</summary>
+    <ol>
+      <li><a href="#overview">01 · 概览指标</a></li>
+      <li><a href="#funnel">02 · 优化流水线漏斗</a></li>
+      <li><a href="#rule-types">03 · 规则类型与类别分布</a></li>
+      <li><a href="#suffixes">04 · 域名后缀 Top 20</a></li>
+      <li><a href="#contributions">05 · 按源贡献分析</a></li>
+      <li><a href="#overlap-matrix">06 · 源间重复矩阵</a></li>
+      <li><a href="#overlap-top">07 · 源间重复 Top 20</a></li>
+      <li><a href="#conflicts">08 · 冲突分析</a></li>
+      <li><a href="#self-dedup">09 · 各源自去重率</a></li>
+      <li><a href="#modifiers">10 · $ 修饰符分布</a></li>
+      <li><a href="#audit">11 · 白名单多层防御审计</a></li>
+      <li><a href="#grammar">12 · 规则语法支持度</a></li>
+      <li><a href="#performance">13 · 性能与诊断</a></li>
+    </ol>
+  </details>
+
+  <div class="stats-grid" id="overview">
     <div class="stat-card"><div class="value">{total_block:,}</div><div class="label">Block 规则</div></div>
     <div class="stat-card"><div class="value">{total_allow:,}</div><div class="label">Allow 白名单</div></div>
     <div class="stat-card"><div class="value">{dedup_rate:.1f}%</div><div class="label">综合去重率</div></div>
@@ -528,8 +644,9 @@ tr:hover {{ background:#f8f9fa; }}
     <div class="stat-card"><div class="value">{_elapsed_value}</div><div class="label">总耗时</div></div>
   </div>
 
-  <div class="section">
-    <h2>📊 优化流水线漏斗</h2>
+  <div class="section" id="funnel">
+    <h2><span class="sec-no">02</span>📊 优化流水线漏斗</h2>
+    <p class="sec-intro">从原始规则到最终输出的逐级收敛：精确/规范化/正则去重 → 聚合折叠 → 冲突消解，每一步标注本阶段减少量。</p>
     <div class="funnel-step"><div class="step-name">原始规则（Raw）</div><div class="step-count">{raw_count:,}</div><div class="step-diff">-</div></div>
     <div class="funnel-step"><div class="step-name">去重后（精确 {outcome.exact_merged:,} / 规范化 {outcome.normalized_merged:,} / 正则 {outcome.regex_merged:,}）</div><div class="step-count">{after_exact:,}</div><div class="step-diff">-{outcome.exact_merged + outcome.normalized_merged + outcome.regex_merged:,}</div></div>
     <div class="funnel-step"><div class="step-name">聚合后（精确 {outcome.aggregated:,} / 通配符 {outcome.wildcard_aggregated:,} / 升级 {outcome.wildcard_promoted:,}）</div><div class="step-count">{after_agg:,}</div><div class="step-diff">-{outcome.aggregated + outcome.wildcard_aggregated + outcome.wildcard_promoted:,}</div></div>
@@ -537,91 +654,108 @@ tr:hover {{ background:#f8f9fa; }}
   </div>
 
   <div class="two-col">
-    <div class="section"><h2>📋 规则类型分布</h2><div id="ruleTypeChart" class="chart"></div></div>
-    <div class="section"><h2>🏷️ 类别分布</h2><div id="categoryChart" class="chart"></div></div>
+    <div class="section" id="rule-types"><h2><span class="sec-no">03</span>📋 规则类型分布</h2><p class="sec-intro">普通域名 / 通配符 / 正则 / IP 四类规则的占比。</p><div id="ruleTypeChart" class="chart"></div></div>
+    <div class="section"><h2>🏷️ 类别分布</h2><p class="sec-intro">Block 规则按广告 / 追踪 / 恶意 / 钓鱼 / 挖矿等类别拆分。</p><div id="categoryChart" class="chart"></div></div>
   </div>
 
-  <div class="section"><h2>🌐 域名后缀 Top 20</h2><div id="suffixChart" class="chart" style="height:450px;"></div></div>
+  <div class="section" id="suffixes"><h2><span class="sec-no">04</span>🌐 域名后缀 Top 20</h2><p class="sec-intro">出现频率最高的注册后缀（含 co.cn 等二级国家后缀折叠），反映规则集中的域名生态。</p><div id="suffixChart" class="chart" style="height:450px;"></div></div>
 
-  <div class="section">
-    <h2>🔗 按源贡献分析（独占 vs 共享）</h2>
+  <div class="section" id="contributions">
+    <h2><span class="sec-no">05</span>🔗 按源贡献分析（独占 vs 共享）</h2>
     <p class="note">统计覆盖最终输出规则（含正则规则）。输出覆盖 = 该源参与的最终规则数（独占+共享，含聚合折叠后归入父规则的）；覆盖率 = 输出覆盖/原始规则；独占率 = 独占/输出覆盖。覆盖率低说明该源大量规则被去重/聚合吸收；独占率低说明该源内容几乎被其他源覆盖，可考虑精简。</p>
-    <table style="margin-top:12px;">
-      <thead><tr><th>源</th><th>原始规则</th><th>输出覆盖</th><th>覆盖率</th><th>独占规则</th><th>与他源共享</th><th>独占率</th></tr></thead>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>源</th><th class="num">原始规则</th><th class="num">输出覆盖</th><th class="num">覆盖率</th><th class="num">独占规则</th><th class="num">与他源共享</th><th class="num">独占率</th></tr></thead>
       <tbody>{contrib_rows}</tbody>
     </table>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>🔄 源间重复矩阵（两两重复规则数 + 重复率）</h2>
-    <p class="note">每格：上行 = 两源共同拥有的规则数，下行小字 = 对称重复率（Jaccard = 共同/并集）。对角线为该源输出覆盖数。颜色按重复率分级：{_dup_legend_html()}（悬停查看双方各自的覆盖率）。</p>
-    <div style="overflow-x:auto;margin-top:12px;">
+  <div class="section" id="overlap-matrix">
+    <h2><span class="sec-no">06</span>🔄 源间重复矩阵（两两重复规则数 + 重复率）</h2>
+    <p class="note">每格：上行 = 两源共同拥有的规则数，下行小字 = 对称重复率（Jaccard = 共同/并集）。对角线为该源输出覆盖数。颜色按重复率分级：{_dup_legend_html()}（悬停查看双方各自的覆盖率）。宽表可左右滑动。</p>
+    <div class="table-wrap">
     <table style="font-size:12px;">
       <thead><tr>{matrix_header}</tr></thead>
       <tbody>{matrix_rows}</tbody>
     </table>
     </div>
     <h3 style="margin-top:18px;font-size:15px;">源编号对照（按输出覆盖降序）</h3>
-    <table style="margin-top:8px;">
-      <thead><tr><th>#</th><th>源</th><th>输出覆盖</th></tr></thead>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>源</th><th class="num">输出覆盖</th></tr></thead>
       <tbody>{matrix_legend_rows}</tbody>
     </table>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>🔄 源间重复 Top 20（双向覆盖率明细）</h2>
+  <div class="section" id="overlap-top">
+    <h2><span class="sec-no">07</span>🔄 源间重复 Top 20（双向覆盖率明细）</h2>
     <p class="note">每对源共同拥有的规则数；覆盖率 = 共同规则数 / 该源输出覆盖数。颜色：<span style="background:#f8d7da;padding:2px 8px;">≥80%</span> <span style="background:#fff3cd;padding:2px 8px;">≥50%</span> <span style="background:#d1ecf1;padding:2px 8px;">≥20%</span> <span style="background:#d4edda;padding:2px 8px;">&lt;20%</span></p>
-    <table style="margin-top:12px;">
-      <thead><tr><th>源 A</th><th>源 B</th><th>共同规则数</th><th>A 覆盖率</th><th>B 覆盖率</th></tr></thead>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>源 A</th><th>源 B</th><th class="num">共同规则数</th><th class="num">A 覆盖率</th><th class="num">B 覆盖率</th></tr></thead>
       <tbody>{overlap_rows}</tbody>
     </table>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>⚔️ 冲突分析（白名单覆盖拦截）</h2>
+  <div class="section" id="conflicts">
+    <h2><span class="sec-no">08</span>⚔️ 冲突分析（白名单覆盖拦截）</h2>
     <p class="note">被白名单移除的拦截规则；展示双方来源，便于追溯是哪个源的白名单覆盖了哪个源的拦截。精确=域名完全匹配，级联=白名单父域覆盖子域。</p>
-    <table style="margin-top:12px;">
+    <div class="table-wrap">
+    <table>
       <thead><tr><th>域名</th><th>被拦规则</th><th>被拦来源</th><th>白名单规则</th><th>白名单来源</th><th>类型</th></tr></thead>
       <tbody>{conflict_rows}</tbody>
     </table>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>📐 各源自去重率（原始 vs 去重后有效）</h2>
+  <div class="section" id="self-dedup">
+    <h2><span class="sec-no">09</span>📐 各源自去重率（原始 vs 去重后有效）</h2>
     <p class="note">有效规则数 = 去重后该源仍覆盖的规则数；自去重率 = 1 - 有效/原始，反映该源内部及与其他源的重复程度。</p>
-    <table style="margin-top:12px;">
-      <thead><tr><th>源</th><th>原始规则</th><th>去重后有效</th><th>自去重率</th></tr></thead>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>源</th><th class="num">原始规则</th><th class="num">去重后有效</th><th class="num">自去重率</th></tr></thead>
       <tbody>{effective_rows}</tbody>
     </table>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>🎯 $ 修饰符分布</h2>
+  <div class="section" id="modifiers">
+    <h2><span class="sec-no">10</span>🎯 $ 修饰符分布</h2>
     <p class="note">保留 <code>$</code> 修饰符（important / badfilter 等），这些列表是 AdGuard Home 语法适配的，修饰符有 DNS 层语义。</p>
-    <table style="margin-top:12px;">
-      <thead><tr><th>修饰符</th><th>规则数</th><th>占比</th></tr></thead>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>修饰符</th><th class="num">规则数</th><th class="num">占比</th></tr></thead>
       <tbody>{modifier_rows}</tbody>
     </table>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>🛡️ 白名单多层防御审计</h2>
-    <p class="note">八层防御体系：DNS解析 → URLhaus/ThreatFox威胁情报 → RDAP域名年龄 → MarketNow诈骗检测 → DNSBL(Spamhaus DBL + SURBL) → VirusTotal(可选) → 离线PSL分类 → AI语义分类(可选)。<span class="tag tag-red">🔴 恶意</span> 建议移除此白名单；<span class="tag tag-yellow">🟡 可疑</span> 需人工确认；<span class="tag tag-green">🟢 安全</span> 可放心放行。需在配置中启用 <code>whitelist_audit.enabled</code>。</p>
+  <div class="section" id="audit">
+    <h2><span class="sec-no">11</span>🛡️ 白名单多层防御审计</h2>
+    <p class="sec-intro">多层防御体系：本地 DNS/DoH、离线启发式、同形字检测 + 免费威胁情报（URLhaus/ThreatFox/RDAP/诈骗检测/DNSBL）+ 可选在线情报（VirusTotal/AI/GSB/PhishTank/urlscan/CT）。</p>
+    <p class="note"><span class="tag tag-red">🔴 恶意</span> 建议移除此白名单；<span class="tag tag-yellow">🟡 可疑</span> 需人工确认；<span class="tag tag-green">🟢 安全</span> 可放心放行。需在配置中启用 <code>whitelist_audit.enabled</code>。</p>
     {"<div class='stats-grid' style='margin:15px 0'><div class='stat-card'><div class='value'>" + str(audit_summary.get("malicious", 0)) + "</div><div class='label'>🔴 恶意</div></div><div class='stat-card'><div class='value'>" + str(audit_summary.get("suspicious", 0)) + "</div><div class='label'>🟡 可疑</div></div><div class='stat-card'><div class='value'>" + str(audit_summary.get("safe", 0)) + "</div><div class='label'>🟢 安全</div></div><div class='stat-card'><div class='value'>" + str(audit_summary.get("unknown", 0)) + "</div><div class='label'>⚪ 未知</div></div></div>" if audit_summary else ""}
-    {"<h3 style='margin:20px 0 10px'>🏗️ 防御层概览</h3><table><thead><tr><th>层级</th><th>检测内容</th><th>状态</th><th>成本</th><th>命中数</th></tr></thead><tbody>" + layer_rows + "</tbody></table>" if layer_rows else ""}
-    {"<h3 style='margin:20px 0 10px'>📂 白名单域名类别分布</h3><table><thead><tr><th>类别</th><th>数量</th><th>占比</th><th>百分比</th></tr></thead><tbody>" + cat_rows + "</tbody></table>" if cat_counts else ""}
-    {"<h3 style='margin:20px 0 10px'>🎯 分类置信度分布</h3><p class='note' style='margin:5px 0'>高置信度=注册域名精确匹配(PSL)，可直接信任；中置信度=子域名前缀匹配，建议人工确认；低置信度=无法分类，需外部API或人工判断。</p><table><thead><tr><th>置信度等级</th><th>数量</th><th>占比</th><th>百分比</th></tr></thead><tbody>" + conf_rows + "</tbody></table>" if conf_dist else ""}
+    {"<h3 style='margin:20px 0 10px'>🏗️ 防御层概览</h3><div class='table-wrap'><table><thead><tr><th>层级</th><th>检测内容</th><th>状态</th><th>成本</th><th class='num'>命中数</th></tr></thead><tbody>" + layer_rows + "</tbody></table></div>" if layer_rows else ""}
+    {"<h3 style='margin:20px 0 10px'>📂 白名单域名类别分布</h3><div class='table-wrap'><table><thead><tr><th>类别</th><th class='num'>数量</th><th>占比</th><th class='num'>百分比</th></tr></thead><tbody>" + cat_rows + "</tbody></table></div>" if cat_counts else ""}
+    {"<h3 style='margin:20px 0 10px'>🎯 分类置信度分布</h3><p class='note' style='margin:5px 0'>高置信度=注册域名精确匹配(PSL)，可直接信任；中置信度=子域名前缀匹配，建议人工确认；低置信度=无法分类，需外部API或人工判断。</p><div class='table-wrap'><table><thead><tr><th>置信度等级</th><th class='num'>数量</th><th>占比</th><th class='num'>百分比</th></tr></thead><tbody>" + conf_rows + "</tbody></table></div>" if conf_dist else ""}
     <h3 style="margin:20px 0 10px">🔍 逐条审计详情</h3>
+    <div class="table-wrap">
     <table>
-      <thead><tr><th>域名</th><th>评级</th><th>类别</th><th>置信度</th><th>原因</th><th>来源</th></tr></thead>
-      <tbody>{audit_rows if audit_rows else '<tr><td colspan="6" style="text-align:center;color:#999">审计未启用</td></tr>'}</tbody>
+      <thead><tr><th>域名</th><th>评级</th><th>类别</th><th class="num">置信度</th><th>原因</th><th>来源</th></tr></thead>
+      <tbody>{audit_rows if audit_rows else '<tr><td colspan="6" class="empty-state">审计未启用</td></tr>'}</tbody>
     </table>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>📝 规则语法支持度矩阵</h2>
+  <div class="section" id="grammar">
+    <h2><span class="sec-no">12</span>📝 规则语法支持度矩阵</h2>
+    <p class="sec-intro">各类规则语法在 DNS 层的支持情况、处理方式与当前数量；CSS/JS 等浏览器层语法在 DNS 输出中丢弃。</p>
+    <div class="table-wrap">
     <table>
-      <thead><tr><th>规则类型</th><th>语法示例</th><th>状态</th><th>处理方式</th><th>数量</th></tr></thead>
+      <thead><tr><th>规则类型</th><th>语法示例</th><th>状态</th><th>处理方式</th><th class="num">数量</th></tr></thead>
       <tbody>
         <tr><td>Block 域名</td><td><code>||example.com^</code></td><td><span class="tag tag-green">✅ 支持</span></td><td>核心输出</td><td>{domain_count:,}</td></tr>
         <tr><td>通配符</td><td><code>||*.example.com^</code></td><td><span class="tag tag-green">✅ 支持</span></td><td>聚合覆盖子域</td><td>{wildcard_count:,}</td></tr>
@@ -633,10 +767,11 @@ tr:hover {{ background:#f8f9fa; }}
         <tr><td>CSS/JS</td><td><code>##.ad</code></td><td><span class="tag tag-red">❌ 丢弃</span></td><td>DNS 层不支持</td><td>{outcome.css_dropped:,}</td></tr>
       </tbody>
     </table>
+    </div>
   </div>
 
-  <div class="two-col">
-    <div class="section"><h2>⚡ 性能指标</h2>
+  <div class="two-col" id="performance">
+    <div class="section"><h2><span class="sec-no">13</span>⚡ 性能指标</h2>
       <table>
         <tr><td>总耗时</td><td><strong>{_elapsed_value}</strong></td></tr>
         <tr><td>源成功率</td><td>{outcome.sources_ok}/{outcome.sources_total}</td></tr>
@@ -910,7 +1045,7 @@ def generate_markdown_report(blocks, allows, outcome, analysis, include_time: bo
     lines.append("## 九、白名单威胁情报审计")
     lines.append("")
     lines.append(
-        "> 八层防御体系：DNS解析 → URLhaus/ThreatFox威胁情报 → RDAP域名年龄 → MarketNow诈骗检测 → DNSBL(Spamhaus DBL + SURBL) → VirusTotal(可选) → 离线PSL分类 → AI语义分类(可选)。🔴 恶意建议移除此白名单；🟡 可疑需人工确认；🟢 安全可放心放行。需在配置中启用 `whitelist_audit.enabled`。"
+        "> 多层防御体系：本地 DNS/DoH、离线启发式、同形字检测 + 免费威胁情报（URLhaus/ThreatFox/RDAP/诈骗检测/DNSBL）+ 可选在线情报（VirusTotal/AI/GSB/PhishTank/urlscan/CT）。🔴 恶意建议移除此白名单；🟡 可疑需人工确认；🟢 安全可放心放行。需在配置中启用 `whitelist_audit.enabled`。"
     )
     lines.append("")
     audit_sum = (getattr(outcome, "whitelist_audit", {}) or {}).get("summary", {})
@@ -920,7 +1055,7 @@ def generate_markdown_report(blocks, allows, outcome, analysis, include_time: bo
         lines.append(f"- 🟢 安全：{audit_sum.get('safe', 0)}")
         lines.append(f"- ⚪ 未知：{audit_sum.get('unknown', 0)}")
         lines.append("")
-        # V5: multi-layer defense overview
+        # V5: multi-layer defense overview (shared catalog with the HTML table)
         layers_enabled = audit_sum.get("layers_enabled", {})
         layer_hits = audit_sum.get("layer_hits", {})
         if layers_enabled:
@@ -928,24 +1063,10 @@ def generate_markdown_report(blocks, allows, outcome, analysis, include_time: bo
             lines.append("")
             lines.append("| 层级 | 检测内容 | 状态 | 成本 | 命中数 |")
             lines.append("|------|---------|------|------|--------|")
-            layer_info = [
-                ("dns", "DNS 解析", "NXDOMAIN/私有IP检测", "免费"),
-                ("urlhaus", "URLhaus", "恶意软件分发域名", "免费"),
-                ("threatfox", "ThreatFox", "C2 命令控制域名", "免费"),
-                ("rdap", "RDAP 域名年龄", "新注册域名<30天标记", "免费"),
-                ("scam_check", "MarketNow 诈骗检测", "拼写劫持/可疑TLD/未注册", "免费"),
-                ("virustotal", "VirusTotal", "多引擎厂商信誉", "需API Key"),
-                ("ai", "AI/LLM 分类", "低置信度域名语义分类", "需API Key"),
-            ]
-            for key, name, desc, cost in layer_info:
-                enabled = layers_enabled.get(key, False)
-                if key == "dns":
-                    hits = layer_hits.get("dns_nxdomain", 0) + layer_hits.get("dns_private_ip", 0)
-                else:
-                    hits = layer_hits.get(key, 0)
-                status = "✅ 启用" if enabled else "⬜ 未启用"
+            for row in _defense_layer_rows(layers_enabled, layer_hits):
                 lines.append(
-                    f"| {name} | {desc} | {status} | {cost} | {hits if enabled else '-'} |"
+                    f"| {row['name']} | {row['desc']} | {row['status']} | "
+                    f"{row['cost']} | {row['hits']} |"
                 )
             lines.append("")
         # V5: category distribution
