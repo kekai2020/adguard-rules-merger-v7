@@ -1,6 +1,6 @@
 {
   "version": "7.0",
-  "content_version": "08c12c1a7804",
+  "content_version": "b2736be0634d",
   "sources": {
     "total": 18,
     "ok": 18,
@@ -15,8 +15,8 @@
     "dedup_rate": 21.0
   },
   "dedup": {
-    "exact_merged": 673890,
-    "normalized_merged": 4035,
+    "exact_merged": 677925,
+    "normalized_merged": 0,
     "regex_merged": 0
   },
   "optimization": {

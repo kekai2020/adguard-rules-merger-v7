@@ -1,12 +1,12 @@
 ! Title: Merged AdGuard Home Filter Rules (V7)
 ! Description: Auto-merged from 18 sources (dedup + aggregation + conflict resolution)
-! Version: 08c12c1a7804
+! Version: b2736be0634d
 ! Homepage: https://github.com/kekai2020/adguard-rules-merger-v7
 ! Total block rules: 2687842
 ! Total whitelist rules: 104
 ! Sources: 18/18
 ! Dedup rate: 21.0%
-! Exact dedup: 673890 | Normalized dedup: 4035 | Regex dedup: 0
+! Exact dedup: 677925 | Normalized dedup: 0 | Regex dedup: 0
 ! Aggregated: exact=34814 wildcard=3 promoted=0
 ! Conflicts resolved: 8
 ! Dropped: pattern=1037 quality=37 css=0 badfilter=6 comments=162
@@ -192763,6 +192763,7 @@
 ||admin.jupiter-nova.online^
 ||admin.jupiterpod.com^
 ||admin.kalitorental.de^
+||admin.kkkshu.net^
 ||admin.landingtrk.com^
 ||admin.lobutuh.com^
 ||admin.louxia.org^
@@ -2325077,6 +2325078,7 @@
 ||superservicecarreirs.com^
 ||superservicefix.com^
 ||superserwisy.pl^
+||superset-qa.sese.cn^
 ||superset.dev.watchmo.icu^
 ||superset.ilgeniodellostreaming.icu^
 ||superset.se8se8.com^
@@ -2620262,12 +2620264,10 @@
 ||www-yy.in6.to^
 ||www-zalo-me.com^
 ||www-zama.xyz^
-||www.admin.kkkshu.net^
-||www.superset-qa.sese.cn^
-||www.www.outlook.tanyajeevankaushiknidhi.com^
-||www.www.www.live2.goodpostman.com^
-||www.www.www.remote.aaa.betb8832.com^
-||www.www.www.www.www.workflow.vo7xvp2.com^
+||www.outlook.tanyajeevankaushiknidhi.com^
+||www.www.live2.goodpostman.com^
+||www.www.remote.aaa.betb8832.com^
+||www.www.www.www.workflow.vo7xvp2.com^
 ||www0-49.net.mydays.de^
 ||www004cpt.com^
 ||www06868.com^

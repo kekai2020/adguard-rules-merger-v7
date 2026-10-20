@@ -83,8 +83,8 @@
     "blocked_category": "ads",
     "blocked_sources": [
       "AWAvenue Ads Rule",
-      "OISD Blocklist Small",
       "CHN: anti-AD",
+      "OISD Blocklist Small",
       "HaGeZi's Ultimate Blocklist",
       "CHN: AdRules DNS List"
     ],

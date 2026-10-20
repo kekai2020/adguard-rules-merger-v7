@@ -46,7 +46,7 @@ tr:hover { background:#f8f9fa; }
   <div class="header">
     <h1>🛡️ AdGuard Rules Merger V7</h1>
     <div class="subtitle">专业规则合并分析报告</div>
-    <div class="meta">内容版本 08c12c1a7804 | 源：18/18</div>
+    <div class="meta">内容版本 b2736be0634d | 源：18/18</div>
   </div>
 
   
@@ -64,7 +64,7 @@ tr:hover { background:#f8f9fa; }
   <div class="section">
     <h2>📊 优化流水线漏斗</h2>
     <div class="funnel-step"><div class="step-name">原始规则（Raw）</div><div class="step-count">3,400,702</div><div class="step-diff">-</div></div>
-    <div class="funnel-step"><div class="step-name">去重后（精确 673,890 / 规范化 4,035 / 正则 0）</div><div class="step-count">2,722,777</div><div class="step-diff">-677,925</div></div>
+    <div class="funnel-step"><div class="step-name">去重后（精确 677,925 / 规范化 0 / 正则 0）</div><div class="step-count">2,722,777</div><div class="step-diff">-677,925</div></div>
     <div class="funnel-step"><div class="step-name">聚合后（精确 34,814 / 通配符 3 / 升级 0）</div><div class="step-count">2,687,960</div><div class="step-diff">-34,817</div></div>
     <div class="funnel-step"><div class="step-name">冲突消解后</div><div class="step-count">2,687,946</div><div class="step-diff">-8</div></div>
   </div>
@@ -195,7 +195,7 @@ tr:hover { background:#f8f9fa; }
 <tr><td><code>settings-win.data.microsoft.com</code></td><td><code>||settings-win.data.microsoft.com^</code></td><td>HaGeZi&#x27;s Ultimate Blocklist</td><td><code>@@||settings-win.data.microsoft.com^</code></td><td>CHN: anti-AD</td><td><span class='tag tag-yellow'>精确</span></td></tr>
 <tr><td><code>global.api.huangye.miui.com</code></td><td><code>||global.api.huangye.miui.com^</code></td><td>HaGeZi&#x27;s Ultimate Blocklist</td><td><code>@@||api.huangye.miui.com^</code></td><td>CHN: anti-AD</td><td><span class='tag tag-yellow'>级联</span></td></tr>
 <tr><td><code>ads.privacy.qq.com</code></td><td><code>||ads.privacy.qq.com^</code></td><td>HaGeZi&#x27;s Ultimate Blocklist</td><td><code>@@||ads.privacy.qq.com^</code></td><td>CHN: anti-AD</td><td><span class='tag tag-yellow'>精确</span></td></tr>
-<tr><td><code>ad.10010.com</code></td><td><code>||ad.10010.com^</code></td><td>AWAvenue Ads Rule, OISD Blocklist Small, CHN: anti-AD, HaGeZi&#x27;s Ultimate Blocklist, CHN: AdRules DNS List</td><td><code>@@||ad.10010.com^</code></td><td>AdGuard DNS filter</td><td><span class='tag tag-yellow'>精确</span></td></tr>
+<tr><td><code>ad.10010.com</code></td><td><code>||ad.10010.com^</code></td><td>AWAvenue Ads Rule, CHN: anti-AD, OISD Blocklist Small, HaGeZi&#x27;s Ultimate Blocklist, CHN: AdRules DNS List</td><td><code>@@||ad.10010.com^</code></td><td>AdGuard DNS filter</td><td><span class='tag tag-yellow'>精确</span></td></tr>
 <tr><td><code>ad.ourgame.com</code></td><td><code>||ad.ourgame.com^</code></td><td>CHN: AdRules DNS List</td><td><code>@@||ad.ourgame.com^</code></td><td>AdGuard DNS filter</td><td><span class='tag tag-yellow'>精确</span></td></tr>
 </tbody>
     </table>
@@ -242,7 +242,7 @@ tr:hover { background:#f8f9fa; }
     <h2>🛡️ 白名单多层防御审计</h2>
     <p class="note">八层防御体系：DNS解析 → URLhaus/ThreatFox威胁情报 → RDAP域名年龄 → MarketNow诈骗检测 → DNSBL(Spamhaus DBL + SURBL) → VirusTotal(可选) → 离线PSL分类 → AI语义分类(可选)。<span class="tag tag-red">🔴 恶意</span> 建议移除此白名单；<span class="tag tag-yellow">🟡 可疑</span> 需人工确认；<span class="tag tag-green">🟢 安全</span> 可放心放行。需在配置中启用 <code>whitelist_audit.enabled</code>。</p>
     <div class='stats-grid' style='margin:15px 0'><div class='stat-card'><div class='value'>0</div><div class='label'>🔴 恶意</div></div><div class='stat-card'><div class='value'>17</div><div class='label'>🟡 可疑</div></div><div class='stat-card'><div class='value'>83</div><div class='label'>🟢 安全</div></div><div class='stat-card'><div class='value'>3</div><div class='label'>⚪ 未知</div></div></div>
-    <h3 style='margin:20px 0 10px'>🏗️ 防御层概览</h3><table><thead><tr><th>层级</th><th>检测内容</th><th>状态</th><th>成本</th><th>命中数</th></tr></thead><tbody><tr><td>DNS 解析</td><td>NXDOMAIN/私有IP检测</td><td><span class='tag tag-green'>✅ 启用</span></td><td>免费</td><td>15</td></tr>
+    <h3 style='margin:20px 0 10px'>🏗️ 防御层概览</h3><table><thead><tr><th>层级</th><th>检测内容</th><th>状态</th><th>成本</th><th>命中数</th></tr></thead><tbody><tr><td>DNS 解析</td><td>NXDOMAIN/私有IP检测</td><td><span class='tag tag-green'>✅ 启用</span></td><td>免费</td><td>0</td></tr>
 <tr><td>URLhaus</td><td>恶意软件分发域名</td><td><span class='tag tag-green'>✅ 启用</span></td><td>免费</td><td>0</td></tr>
 <tr><td>ThreatFox</td><td>C2 命令控制域名</td><td><span class='tag tag-green'>✅ 启用</span></td><td>免费</td><td>0</td></tr>
 <tr><td>RDAP 域名年龄</td><td>新注册域名<30天标记</td><td><span class='tag tag-green'>✅ 启用</span></td><td>免费</td><td>0</td></tr>
@@ -397,8 +397,8 @@ tr:hover { background:#f8f9fa; }
         <tr><td>总耗时</td><td><strong>—</strong></td></tr>
         <tr><td>源成功率</td><td>18/18</td></tr>
         <tr><td>缓存命中</td><td>—</td></tr>
-        <tr><td>精确去重</td><td>673,890</td></tr>
-        <tr><td>规范化去重</td><td>4,035</td></tr>
+        <tr><td>精确去重</td><td>677,925</td></tr>
+        <tr><td>规范化去重</td><td>0</td></tr>
         <tr><td>正则去重</td><td>0</td></tr>
         <tr><td>本次新增域名</td><td>0</td></tr>
         <tr><td>本次移除域名</td><td>0</td></tr>
@@ -413,7 +413,7 @@ tr:hover { background:#f8f9fa; }
     </div>
   </div>
 
-  <div class="footer">AdGuard Rules Merger V7 · 自动生成 · 内容版本 08c12c1a7804</div>
+  <div class="footer">AdGuard Rules Merger V7 · 自动生成 · 内容版本 b2736be0634d</div>
 </div>
 <script>
 const ruleTypeChart = echarts.init(document.getElementById('ruleTypeChart'));

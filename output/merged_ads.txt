@@ -1,6 +1,6 @@
 ! Title: Merged ads filter (V7)
 ! Category: ads
-! Version: 08c12c1a7804-ads
+! Version: b2736be0634d-ads
 ! Rules: 280817
 !
 /(https?:\/\/)213\.32\.115\..{100,}/

@@ -1,6 +1,6 @@
 # AdGuard Rules Merger V7 — 规则分析报告
 
-> 内容版本 08c12c1a7804 | 源：18/18
+> 内容版本 b2736be0634d | 源：18/18
 
 ## 一、概览
 
@@ -19,7 +19,7 @@
 | 阶段 | 规则数 | 本阶段减少 |
 |------|--------|-----------|
 | 原始规则（Raw） | 3,400,702 | - |
-| 去重后（精确 673,890 / 规范化 4,035 / 正则 0） | 2,722,777 | -677,925 |
+| 去重后（精确 677,925 / 规范化 0 / 正则 0） | 2,722,777 | -677,925 |
 | 聚合后（精确 34,814 / 通配符 3 / 升级 0） | 2,687,960 | -34,817 |
 | 冲突消解后 | 2,687,946 | -8 |
 
@@ -181,7 +181,7 @@
 | `settings-win.data.microsoft.com` | `||settings-win.data.microsoft.com^` | HaGeZi's Ultimate Blocklist | `@@||settings-win.data.microsoft.com^` | CHN: anti-AD | 精确 |
 | `global.api.huangye.miui.com` | `||global.api.huangye.miui.com^` | HaGeZi's Ultimate Blocklist | `@@||api.huangye.miui.com^` | CHN: anti-AD | 级联 |
 | `ads.privacy.qq.com` | `||ads.privacy.qq.com^` | HaGeZi's Ultimate Blocklist | `@@||ads.privacy.qq.com^` | CHN: anti-AD | 精确 |
-| `ad.10010.com` | `||ad.10010.com^` | AWAvenue Ads Rule, OISD Blocklist Small, CHN: anti-AD, HaGeZi's Ultimate Blocklist, CHN: AdRules DNS List | `@@||ad.10010.com^` | AdGuard DNS filter | 精确 |
+| `ad.10010.com` | `||ad.10010.com^` | AWAvenue Ads Rule, CHN: anti-AD, OISD Blocklist Small, HaGeZi's Ultimate Blocklist, CHN: AdRules DNS List | `@@||ad.10010.com^` | AdGuard DNS filter | 精确 |
 | `ad.ourgame.com` | `||ad.ourgame.com^` | CHN: AdRules DNS List | `@@||ad.ourgame.com^` | AdGuard DNS filter | 精确 |
 
 ## 八、$ 修饰符分布
@@ -205,7 +205,7 @@
 
 | 层级 | 检测内容 | 状态 | 成本 | 命中数 |
 |------|---------|------|------|--------|
-| DNS 解析 | NXDOMAIN/私有IP检测 | ✅ 启用 | 免费 | 15 |
+| DNS 解析 | NXDOMAIN/私有IP检测 | ✅ 启用 | 免费 | 0 |
 | URLhaus | 恶意软件分发域名 | ✅ 启用 | 免费 | 0 |
 | ThreatFox | C2 命令控制域名 | ✅ 启用 | 免费 | 0 |
 | RDAP 域名年龄 | 新注册域名<30天标记 | ✅ 启用 | 免费 | 0 |
@@ -387,8 +387,8 @@
 | 总耗时 | — |
 | 源成功率 | 18/18 |
 | 缓存命中 | — |
-| 精确去重 | 673,890 |
-| 规范化去重 | 4,035 |
+| 精确去重 | 677,925 |
+| 规范化去重 | 0 |
 | 正则去重 | 0 |
 | 质量过滤丢弃 | 37 |
 | 模式丢弃 | 1,037 |
@@ -399,4 +399,4 @@
 | 最短/最长域名 | 2 / 242 字符 |
 
 ---
-*AdGuard Rules Merger V7 · 自动生成 · 内容版本 08c12c1a7804*
+*AdGuard Rules Merger V7 · 自动生成 · 内容版本 b2736be0634d*

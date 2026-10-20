@@ -1,6 +1,6 @@
 ! Title: Merged phishing filter (V7)
 ! Category: phishing
-! Version: 08c12c1a7804-phishing
+! Version: b2736be0634d-phishing
 ! Rules: 64235
 !
 ||0-1-x.16215785.xyz^
