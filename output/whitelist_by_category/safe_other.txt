@@ -1,6 +1,6 @@
 ! Title: AdGuard Rules Merger — Whitelist (safe / 其他)
-! Count: 58
-! Version: 1d31c6b46b8d
+! Count: 60
+! Version: 568c41c7b6ca
 @@||3gppnetwork.org^
 @@||ad-gone.com^
 @@||ad-putting.gw.zt-express.com^
@@ -32,6 +32,7 @@
 @@||dxcloud.episerver.net^
 @@||fritz.box^
 @@||ftp.bmp.ovh^
+@@||hash.cymru.com^
 @@||hostkarma.junkemailfilter.com^
 @@||img.ads.tvb.com^
 @@||ipv4only.arpa^
@@ -43,6 +44,7 @@
 @@||psbl.surriel.com^
 @@||routerlogin.com^
 @@||routerlogin.net^
+@@||s.mvconf.f.360.cn^
 @@||sdkapi.sms.mob.com^
 @@||skydrivesync.policies.live.net^
 @@||sophosxl.net^

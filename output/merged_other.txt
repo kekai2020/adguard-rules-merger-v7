@@ -1,7 +1,7 @@
 ! Title: Merged other filter (V7)
 ! Category: other
-! Version: b2736be0634d-other
-! Rules: 548333
+! Version: c4ecd1462e7a-other
+! Rules: 548332
 !
 ||0-10-7.casino^
 ||0-2-0-7.casino^
@@ -3398,7 +3398,6 @@
 ||1-winvip.com^
 ||1-winvn.online^
 ||1-winz.live^
-||1-x-bet-india.com^
 ||1-x-bet.com^
 ||1-x-bet.sbs^
 ||1-x-bet.top^

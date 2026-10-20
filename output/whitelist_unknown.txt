@@ -1,6 +1,4 @@
 ! Title: AdGuard Rules Merger — Whitelist (unknown)
-! Count: 3
-! Version: fefb0db690ee
-@@||hash.cymru.com^
-@@||s.mvconf.f.360.cn^
+! Count: 1
+! Version: dd1f7c06c521
 @@||tplinklogin.net^

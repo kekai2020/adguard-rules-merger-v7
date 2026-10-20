@@ -1,6 +1,6 @@
 ! Title: AdGuard Rules Merger — Whitelist (safe)
-! Count: 83
-! Version: d28bd7a4b565
+! Count: 86
+! Version: ddbe77e24380
 @@||3gppnetwork.org^
 @@||ad-block.dns.adguard.com^
 @@||ad-gone.com^
@@ -36,6 +36,7 @@
 @@||center-h5api.m.taobao.com^
 @@||chart-embed.service.newrelic.com^
 @@||direct.quickconnect.to^
+@@||dns.msftncsi.com^
 @@||dnsbl.dronebl.org^
 @@||dnswl.org^
 @@||dq.spamhaus.net^
@@ -43,6 +44,7 @@
 @@||fritz.box^
 @@||ftp.bmp.ovh^
 @@||future.biz.weibo.com^
+@@||hash.cymru.com^
 @@||hostkarma.junkemailfilter.com^
 @@||img.ads.tvb.com^
 @@||insideruser.microsoft.com^
@@ -57,6 +59,7 @@
 @@||psbl.surriel.com^
 @@||routerlogin.com^
 @@||routerlogin.net^
+@@||s.mvconf.f.360.cn^
 @@||sdkapi.sms.mob.com^
 @@||settings-win.data.microsoft.com^
 @@||skyapi.onedrive.live.com^
