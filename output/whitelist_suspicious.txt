@@ -1,0 +1,20 @@
+! Title: AdGuard Rules Merger — Whitelist (suspicious)
+! Count: 17
+! Version: 1c71fc0e79af
+@@||ad.cityu.edu.hk^
+@@||avqs.mcafee.com^
+@@||avts.mcafee.com^
+@@||counter-strike.net^
+@@||dishy.starlink.com^
+@@||dns.msftncsi.com^
+@@||edge-enterprise.activity.windows.com^
+@@||edge.activity.windows.com^
+@@||fritz.nas^
+@@||fritz.powerline^
+@@||fritz.repeater^
+@@||fritz.smartgateway^
+@@||mail.abusix.zone^
+@@||meizu.coapi.moji.com^
+@@||plex.direct^
+@@||router.asus.com^
+@@||speedport.ip^
