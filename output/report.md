@@ -19,7 +19,7 @@
 | 阶段 | 规则数 | 本阶段减少 |
 |------|--------|-----------|
 | 原始规则（Raw） | 3,400,546 | - |
-| 去重后（精确 674,970 / 规范化 2,804 / 正则 0） | 2,722,772 | -677,774 |
+| 去重后（精确 677,774 / 规范化 0 / 正则 0） | 2,722,772 | -677,774 |
 | 聚合后（精确 34,759 / 通配符 3 / 升级 0） | 2,688,010 | -34,762 |
 | 冲突消解后 | 2,687,996 | -8 |
 
@@ -175,14 +175,14 @@
 
 | 域名 | 被拦规则 | 被拦来源 | 白名单规则 | 白名单来源 | 类型 |
 |------|---------|---------|-----------|-----------|------|
+| `ad.10010.com` | `||ad.10010.com^` | CHN: AdRules DNS List, AWAvenue Ads Rule, OISD Blocklist Small, CHN: anti-AD, HaGeZi's Ultimate Blocklist | `@@||ad.10010.com^` | AdGuard DNS filter | 精确 |
+| `ad.ourgame.com` | `||ad.ourgame.com^` | CHN: AdRules DNS List | `@@||ad.ourgame.com^` | AdGuard DNS filter | 精确 |
+| `app.adjust.com` | `||app.adjust.com^` | AdGuard DNS filter | `@@||app.adjust.com^` | CHN: anti-AD | 精确 |
 | `autocomplete.clearbit.com` | `||autocomplete.clearbit.com^` | HaGeZi's Ultimate Blocklist | `@@||autocomplete.clearbit.com^` | CHN: anti-AD | 精确 |
 | `ad.cityu.edu.hk` | `||ad.cityu.edu.hk^` | HaGeZi's Ultimate Blocklist | `@@||ad.cityu.edu.hk^` | CHN: anti-AD | 精确 |
 | `settings-win.data.microsoft.com` | `||settings-win.data.microsoft.com^` | HaGeZi's Ultimate Blocklist | `@@||settings-win.data.microsoft.com^` | CHN: anti-AD | 精确 |
 | `global.api.huangye.miui.com` | `||global.api.huangye.miui.com^` | HaGeZi's Ultimate Blocklist | `@@||api.huangye.miui.com^` | CHN: anti-AD | 级联 |
 | `ads.privacy.qq.com` | `||ads.privacy.qq.com^` | HaGeZi's Ultimate Blocklist | `@@||ads.privacy.qq.com^` | CHN: anti-AD | 精确 |
-| `app.adjust.com` | `||app.adjust.com^` | AdGuard DNS filter | `@@||app.adjust.com^` | CHN: anti-AD | 精确 |
-| `ad.10010.com` | `||ad.10010.com^` | OISD Blocklist Small, AWAvenue Ads Rule, CHN: anti-AD, HaGeZi's Ultimate Blocklist, CHN: AdRules DNS List | `@@||ad.10010.com^` | AdGuard DNS filter | 精确 |
-| `ad.ourgame.com` | `||ad.ourgame.com^` | CHN: AdRules DNS List | `@@||ad.ourgame.com^` | AdGuard DNS filter | 精确 |
 
 ## 八、$ 修饰符分布
 
@@ -205,7 +205,7 @@
 
 | 层级 | 检测内容 | 状态 | 成本 | 命中数 |
 |------|---------|------|------|--------|
-| DNS 解析 | NXDOMAIN/私有IP检测 | ✅ 启用 | 免费 | 14 |
+| DNS 解析 | NXDOMAIN/私有IP检测 | ✅ 启用 | 免费 | 0 |
 | DoH 加密解析 | NextDNS 加密传输，失败回退系统DNS | ✅ 启用 | 免费 | — |
 | URLhaus | 恶意软件分发域名 | ✅ 启用 | 免费 | 0 |
 | ThreatFox | C2 命令控制域名 | ✅ 启用 | 免费 | 0 |
@@ -215,7 +215,7 @@
 | VirusTotal | 多引擎厂商信誉 | ⬜ 未启用 | 需API Key | - |
 | AI/LLM 分类 | 低置信语义分类 | ⬜ 未启用 | 需API Key | - |
 | 内置离线启发式 | 滥用TLD/连字符等（常驻，无开关键） | ✅ 启用 | 免费 | 0 |
-| 同形字/拼写劫持 | Cyrillic/Greek 折叠+编辑距离 | ✅ 启用 | 免费·默认开 | 2 |
+| 同形字/拼写劫持 | Cyrillic/Greek 折叠+编辑距离 | ✅ 启用 | 免费·默认开 | 0 |
 | MX/SPF 缺失线索 | 需 DNS，默认关 | ⬜ 未启用 | 可选 | - |
 | Google Safe Browsing | 在线情报 | ⬜ 未启用 | 需API Key | - |
 | PhishTank | 钓鱼库 | ⬜ 未启用 | 需API Key | - |
@@ -396,8 +396,8 @@
 | 总耗时 | — |
 | 源成功率 | 18/18 |
 | 缓存命中 | — |
-| 精确去重 | 674,970 |
-| 规范化去重 | 2,804 |
+| 精确去重 | 677,774 |
+| 规范化去重 | 0 |
 | 正则去重 | 0 |
 | 质量过滤丢弃 | 37 |
 | 模式丢弃 | 1,037 |

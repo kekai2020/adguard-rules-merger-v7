@@ -15,8 +15,8 @@
     "dedup_rate": 21.0
   },
   "dedup": {
-    "exact_merged": 674970,
-    "normalized_merged": 2804,
+    "exact_merged": 677774,
+    "normalized_merged": 0,
     "regex_merged": 0
   },
   "optimization": {

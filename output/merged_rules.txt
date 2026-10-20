@@ -6,7 +6,7 @@
 ! Total whitelist rules: 104
 ! Sources: 18/18
 ! Dedup rate: 21.0%
-! Exact dedup: 674970 | Normalized dedup: 2804 | Regex dedup: 0
+! Exact dedup: 677774 | Normalized dedup: 0 | Regex dedup: 0
 ! Aggregated: exact=34759 wildcard=3 promoted=0
 ! Conflicts resolved: 8
 ! Dropped: pattern=1037 quality=37 css=0 badfilter=6 comments=162
