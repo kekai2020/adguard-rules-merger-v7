@@ -81,7 +81,7 @@ whitelist_audit:
   # signals are read through this encrypted channel; any DoH failure
   # automatically falls back to the system resolver (never blocks a check).
   # Leave empty to use the system resolver only.
-  doh_endpoint: "https://dns.nextdns.io/3fef68/AdguardHome%20Github"
+  doh_endpoint: "https://dns.nextdns.io/3fef68/AdguardHomeGithub"
   # Layer 2: Threat intelligence (free, keyless)
   use_urlhaus: true
   use_threatfox: true
