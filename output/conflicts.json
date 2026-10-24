@@ -106,5 +106,18 @@
       "CHN: anti-AD"
     ],
     "conflict_type": "exact"
+  },
+  {
+    "domain": "slm501y93viprep.dxcloud.episerver.net",
+    "blocked_rule": "||slm501y93viprep.dxcloud.episerver.net^",
+    "blocked_category": "malware",
+    "blocked_sources": [
+      "HaGeZi's Threat Intelligence Feeds"
+    ],
+    "whitelist_rule": "@@||dxcloud.episerver.net^",
+    "whitelist_sources": [
+      "CHN: anti-AD"
+    ],
+    "conflict_type": "cascade"
   }
 ]
