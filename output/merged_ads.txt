@@ -1,7 +1,7 @@
 ! Title: Merged ads filter (V7)
 ! Category: ads
-! Version: 97dd51e389fa-ads
-! Rules: 287453
+! Version: 98b889c5e3f3-ads
+! Rules: 287476
 !
 /(https?:\/\/)213\.32\.115\..{100,}/
 /(https?:\/\/)217\.182\.11\..{100,}/
@@ -2754,6 +2754,7 @@
 ||3qfe1gfa.de^
 ||3qqq.net^
 ||3qtw.com^
+||3r3zok58ihon3teu7vvggt.cfd^
 ||3radical.com^
 ||3rd.t.sohu.com^
 ||3rdmartini.com^
@@ -8388,7 +8389,6 @@
 ||acdojsqocgvoj.online^
 ||acds-events.adobe.io^
 ||ace-adserver.com^
-||ace-hellas.gr^
 ||ace.naver.com^
 ||ace.wsj.com^
 ||ace1mg.cloud^
@@ -37483,6 +37483,7 @@
 ||bcfeedback.taobao.com^
 ||bcfgwi.skidxb.com^
 ||bcfhva.tradingpost.com.au^
+||bcfrmjrhbshgui.com^
 ||bcftrk.novuna.co.uk^
 ||bcgame.top^
 ||bcglkfu.cn^
@@ -57924,6 +57925,7 @@
 ||cwtss.connection.com^
 ||cwttam.conga.com^
 ||cwtzwibg.www.sauceshop.co^
+||cwugtbckggfma.space^
 ||cwvueoaakybnr.site^
 ||cwxb.luganotranslations.com^
 ||cwynjf.metalshop.de^
@@ -77620,6 +77622,7 @@
 ||enwawvap.com^
 ||enx5.online^
 ||enylhpdbexguq.website^
+||enylukombwf.com^
 ||enzuzo.com^
 ||eo.3y4n.cn^
 ||eo.40ic.cn^
@@ -91294,6 +91297,7 @@
 ||gluvrkcvvldus.website^
 ||glvhvesvnp.com^
 ||glvmtlnxdxdhl.website^
+||glvyhoyrrlfmd.space^
 ||glwcxjcrnpjfb.site^
 ||glwxw.net^
 ||glxdlf.tickets.ua^
@@ -103247,6 +103251,7 @@
 ||hgiafe.site^
 ||hgiedbfiabaiaaheaaee.world^
 ||hginsights.com^
+||hgiqkyirvglqc.site^
 ||hgiri.peridonentertainment.com^
 ||hgisekhkuhrlo.online^
 ||hgjjk45.com^
@@ -105997,6 +106002,7 @@
 ||hwvqka.millets.co.uk^
 ||hwvzysmzxzpmf.online^
 ||hwwpt.justballgloves.com^
+||hwwxwzzhlcxeg.site^
 ||hwwzqi.cn^
 ||hwypoqfw.dynefabrikken.dk^
 ||hwyunboggy.com^
@@ -107374,6 +107380,7 @@
 ||ifrus.coloros.com^
 ||ifs.lazada.sg^
 ||ifs.tanx.com^
+||ifsacademy.org^
 ||ifsaia.biz^
 ||ifsau-eu.coloros.com^
 ||ifsau-in.coloros.com^
@@ -116176,6 +116183,7 @@
 ||juzi.cn^
 ||juzi007.com^
 ||juzi66.com^
+||juzipqheakaqm.website^
 ||juzqsq.finanzcheck.de^
 ||jv0rlf.com^
 ||jv16powertools.com^
@@ -119699,6 +119707,7 @@
 ||kzfoqrsqubdgi.site^
 ||kzgbzylkrjfxa.space^
 ||kzgcq.hero.co^
+||kzgfmvzhsvdmp.space^
 ||kzgmpu.com^
 ||kzgqt.poppyandpeonies.com^
 ||kzgst.campingsurvival.com^
@@ -153568,6 +153577,7 @@
 ||mukkoiigam.com^
 ||mukorlxceol.com^
 ||mukrirumpy.cyou^
+||muktifidgetshreeve.cyou^
 ||mulanphone.cn^
 ||mulato.info^
 ||mulberrycontrolforming.com^
@@ -153998,6 +154008,7 @@
 ||mxgetdata.com^
 ||mxgjuoycnxfgn.website^
 ||mxgwyd.com^
+||mxgygkjqxdxsj.website^
 ||mxhchjhlygqlh.website^
 ||mxhkhupmbzsow.online^
 ||mxhtd.justbats.com^
@@ -154372,6 +154383,7 @@
 ||myedebred.fr^
 ||myeffecto.com^
 ||myeliccaqueartel.cyou^
+||myelomaweaned.com^
 ||myemailtracking.com^
 ||myes.youku.com^
 ||myesutdnuyddu.com^
@@ -156289,6 +156301,7 @@
 ||netflame.cc^
 ||netflix-memberships.com^
 ||netflix.apple-green.net^
+||netflix520.com^
 ||netflixca-updateprofilehelp.com^
 ||netflixe.kundensupport-kundensupport.de^
 ||netflixl.com^
@@ -166736,6 +166749,7 @@
 ||pdjxoscm7.com^
 ||pdjyzx.com^
 ||pdkcnc.meilleurvendeur.com^
+||pdkoutwwkmiwj.website^
 ||pdl.bike^
 ||pdl.gionee.com^
 ||pdlavr.erwinmueller.com^
@@ -252711,6 +252725,7 @@
 ||tnwotuqey.com^
 ||tnx.net^
 ||tnxkpmfknbiwr.space^
+||tnxldeidocwiq.space^
 ||tnxwjnqyvosfj.website^
 ||tnxxtx.crepeerase.com^
 ||tnz3.carrefour-banque.fr^
@@ -265104,6 +265119,7 @@
 ||ubmlive.com^
 ||ubmups.houseofindya.com^
 ||ubmwua.maisonsetappartements.fr^
+||ubmxhyirzwcsv.website^
 ||ubogicetmixgdl.com^
 ||uboiujkzwbp.com^
 ||ubonhvgfmfprv.online^
@@ -265762,6 +265778,7 @@
 ||uj08lr3rv.com^
 ||uj3wazyk5u4hnvtk.onion.pet^
 ||ujbhri.pharmamarket.nl^
+||ujdpcvitrkukj.online^
 ||ujekas.outletmabe.com.mx^
 ||ujftlsnz.jurio.com^
 ||ujftlsnz.legaldesk.dk^
@@ -272115,6 +272132,7 @@
 ||vjvpck.senacases.com^
 ||vjvrhchxxvait.space^
 ||vjvtvr.juinn.co.kr^
+||vjwdhqqyxzdhm.website^
 ||vjxidipciqcso.website^
 ||vjyati.frozenes.com^
 ||vjyljycvfcfrj.online^
@@ -276499,6 +276517,7 @@
 ||weeb.weebystitches.com^
 ||weebuwbbwqrij.site^
 ||weed6tape.com^
+||weederswoilieauftakt.qpon^
 ||weednewspro.com^
 ||weedoit.fr^
 ||weedsyearday.com^
@@ -277633,6 +277652,7 @@
 ||wingstowheels.com^
 ||wingtalks.com^
 ||winhunters.com^
+||winingnitery.qpon^
 ||winitout.com^
 ||wink.eham.net^
 ||winkdell.com^
@@ -280106,6 +280126,7 @@
 ||xc.mydrivers.com^
 ||xc3.services.livejournal.com^
 ||xc5r5huxrr.com^
+||xc6ofex1mmj3i33ufgg4zq21t.rest^
 ||xc8yfo8ll29t9l134bh.cfd^
 ||xcafuqqbgb.icu^
 ||xcams.net^
@@ -285565,6 +285586,7 @@
 ||zenkreka.com^
 ||zenoviagroup.com^
 ||zenquantai.com^
+||zenrgdlcarkyi.site^
 ||zenru.1md.org^
 ||zensorium.com^
 ||zenstats.yzhy19.cn^
@@ -286259,6 +286281,7 @@
 ||zkvxgc.nissui-kenko.com^
 ||zkwfpundrptus.site^
 ||zkwsdf.com^
+||zkwxohilcpfeb.online^
 ||zkxufaz.com^
 ||zkxweadue.com^
 ||zkyboxukmxmwc.website^

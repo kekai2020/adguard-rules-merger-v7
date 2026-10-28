@@ -3,13 +3,13 @@
     "name": "HaGeZi's Threat Intelligence Feeds",
     "url": "https://adguardteam.github.io/HostlistsRegistry/assets/filter_44.txt",
     "raw_rules": 2082730,
-    "unique_rules": 1790093,
-    "shared_rules": 290857,
-    "effective_rules": 2080950,
+    "unique_rules": 1790195,
+    "shared_rules": 290749,
+    "effective_rules": 2080944,
     "coverage_rate": 99.9,
     "unique_rate": 86.0,
     "rule_categories": {
-      "malware": 2080950
+      "malware": 2080944
     }
   },
   {
@@ -32,15 +32,15 @@
     "name": "HaGeZi's Ultimate Blocklist",
     "url": "https://adguardteam.github.io/HostlistsRegistry/assets/filter_49.txt",
     "raw_rules": 248456,
-    "unique_rules": 85156,
-    "shared_rules": 161936,
+    "unique_rules": 85154,
+    "shared_rules": 161938,
     "effective_rules": 247092,
     "coverage_rate": 99.5,
     "unique_rate": 34.5,
     "rule_categories": {
       "malware": 91135,
-      "ads": 155287,
-      "phishing": 271,
+      "ads": 155288,
+      "phishing": 270,
       "tracking": 374,
       "mining": 25
     }
@@ -48,15 +48,15 @@
   {
     "name": "Phishing Army",
     "url": "https://adguardteam.github.io/HostlistsRegistry/assets/filter_18.txt",
-    "raw_rules": 152809,
-    "unique_rules": 43170,
-    "shared_rules": 87977,
-    "effective_rules": 131147,
+    "raw_rules": 152925,
+    "unique_rules": 43204,
+    "shared_rules": 88068,
+    "effective_rules": 131272,
     "coverage_rate": 85.8,
     "unique_rate": 32.9,
     "rule_categories": {
-      "phishing": 58934,
-      "malware": 72213
+      "phishing": 59160,
+      "malware": 72112
     }
   },
   {
@@ -113,14 +113,14 @@
   {
     "name": "AdGuard DNS filter",
     "url": "https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt",
-    "raw_rules": 184151,
-    "unique_rules": 4981,
-    "shared_rules": 176745,
-    "effective_rules": 181726,
+    "raw_rules": 184178,
+    "unique_rules": 5003,
+    "shared_rules": 176750,
+    "effective_rules": 181753,
     "coverage_rate": 98.7,
-    "unique_rate": 2.7,
+    "unique_rate": 2.8,
     "rule_categories": {
-      "ads": 156179,
+      "ads": 156206,
       "malware": 25488,
       "phishing": 16,
       "tracking": 24,
@@ -131,11 +131,11 @@
     "name": "Phishing URL Blocklist (PhishTank and OpenPhish)",
     "url": "https://adguardteam.github.io/HostlistsRegistry/assets/filter_30.txt",
     "raw_rules": 25119,
-    "unique_rules": 2467,
-    "shared_rules": 20776,
+    "unique_rules": 2274,
+    "shared_rules": 20969,
     "effective_rules": 23243,
     "coverage_rate": 92.5,
-    "unique_rate": 10.6,
+    "unique_rate": 9.8,
     "rule_categories": {
       "phishing": 18187,
       "malware": 5056

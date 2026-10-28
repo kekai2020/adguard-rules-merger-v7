@@ -1,6 +1,6 @@
 ! Title: Merged mining filter (V7)
 ! Category: mining
-! Version: 97dd51e389fa-mining
+! Version: 98b889c5e3f3-mining
 ! Rules: 166
 !
 ||1q2w3.fun^
