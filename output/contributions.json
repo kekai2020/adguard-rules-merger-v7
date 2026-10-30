@@ -3,13 +3,13 @@
     "name": "HaGeZi's Threat Intelligence Feeds",
     "url": "https://adguardteam.github.io/HostlistsRegistry/assets/filter_44.txt",
     "raw_rules": 2062780,
-    "unique_rules": 1771946,
+    "unique_rules": 1771942,
     "shared_rules": 288992,
-    "effective_rules": 2060938,
+    "effective_rules": 2060934,
     "coverage_rate": 99.9,
     "unique_rate": 86.0,
     "rule_categories": {
-      "malware": 2060938
+      "malware": 2060934
     }
   },
   {
@@ -32,8 +32,8 @@
     "name": "HaGeZi's Ultimate Blocklist",
     "url": "https://adguardteam.github.io/HostlistsRegistry/assets/filter_49.txt",
     "raw_rules": 249407,
-    "unique_rules": 86598,
-    "shared_rules": 161443,
+    "unique_rules": 86596,
+    "shared_rules": 161445,
     "effective_rules": 248041,
     "coverage_rate": 99.5,
     "unique_rate": 34.9,
@@ -79,15 +79,15 @@
   {
     "name": "CHN: AdRules DNS List",
     "url": "https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt",
-    "raw_rules": 204869,
+    "raw_rules": 204951,
     "unique_rules": 11962,
-    "shared_rules": 188932,
-    "effective_rules": 200894,
+    "shared_rules": 189014,
+    "effective_rules": 200976,
     "coverage_rate": 98.1,
     "unique_rate": 6.0,
     "rule_categories": {
-      "ads": 173889,
-      "malware": 26743,
+      "ads": 173970,
+      "malware": 26744,
       "phishing": 113,
       "tracking": 111,
       "mining": 38
@@ -113,14 +113,14 @@
   {
     "name": "AdGuard DNS filter",
     "url": "https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt",
-    "raw_rules": 184692,
-    "unique_rules": 5003,
-    "shared_rules": 177254,
-    "effective_rules": 182257,
+    "raw_rules": 184721,
+    "unique_rules": 4955,
+    "shared_rules": 177331,
+    "effective_rules": 182286,
     "coverage_rate": 98.7,
     "unique_rate": 2.7,
     "rule_categories": {
-      "ads": 156601,
+      "ads": 156630,
       "malware": 25596,
       "phishing": 16,
       "tracking": 25,

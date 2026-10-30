@@ -1,7 +1,7 @@
 ! Title: Merged ads filter (V7)
 ! Category: ads
-! Version: 0da439873fdd-ads
-! Rules: 284177
+! Version: 8950d309436f-ads
+! Rules: 284205
 !
 /(https?:\/\/)213\.32\.115\..{100,}/
 /(https?:\/\/)217\.182\.11\..{100,}/
@@ -3908,6 +3908,7 @@
 ||7373.net^
 ||73780fbd309561e201a4aee9914d882d.org^
 ||737d62f0c1.com^
+||73boj1f7pn7o3u1.cfd^
 ||73dkt-vwrqs.xyz^
 ||73ed366d3137ec936bd60b1184467776.com^
 ||74.208.64.80.sslip.io^
@@ -34679,6 +34680,7 @@
 ||aurangcohostsbillons.cyou^
 ||auraodin.com^
 ||auraria.org^
+||aurasmorisco.cfd^
 ||aureate.com^
 ||auredzeon.com^
 ||auredzetw.com^
@@ -39826,6 +39828,7 @@
 ||bixberry.com^
 ||bixhdzkxhgoxr.online^
 ||bixia.fymm.cn^
+||biyeclmyrylpk.space^
 ||biyolojisitesi.net^
 ||biytmartlogine.webflow.io^
 ||biyx13mg.online^
@@ -40404,6 +40407,7 @@
 ||bloxplay.com^
 ||bloxstrap.org^
 ||blpl.hoes.tube^
+||blpqrkniqie9nycylf5oi6.rest^
 ||blqwbyqnvmzzq.top^
 ||blrag.georgiemane.com^
 ||blrhel.veronicabeard.com^
@@ -47283,6 +47287,7 @@
 ||cdtal.getbugmd.com^
 ||cdtbox.rocks^
 ||cdtm.cdiscount.com^
+||cdufhlusbphrp.website^
 ||cduxqw.afrika-safari.dk^
 ||cdvscuvnxnlqx.website^
 ||cdvsd9.com^
@@ -56302,6 +56307,7 @@
 ||csm.magnetintell.com^
 ||csmads.gameclick.vn^
 ||csmetrics.wilton.com^
+||csmvsosefwowj.space^
 ||csnsqykc0.com^
 ||csom844jkc.com^
 ||csos-prevalidated-telemetry-eu-central-1.s3.eu-central-1.amazonaws.com^
@@ -74576,6 +74582,7 @@
 ||eeggcccfeiejieiagacf.world^
 ||eegnd.flightuniform.com^
 ||eehjbmpykwsfj.site^
+||eehodxxxqrbba.website^
 ||eehsd.cyclegear.com^
 ||eei.lobbycafe.cn^
 ||eeigvdirpfmob.online^
@@ -77269,6 +77276,7 @@
 ||erhlyvjhetcad.online^
 ||erhverv.hebsoe.dk^
 ||eriadsrvr.com^
+||ericaseugeniebeefalo.cyou^
 ||ericasfz.com^
 ||ericazoeal.com^
 ||ericdress.com^
@@ -101477,6 +101485,7 @@
 ||hdjoi.omniluxled.com^
 ||hdjthzg.cn^
 ||hdjyhh.heartpercent.co.kr^
+||hdkegaxpctypw.online^
 ||hdluzy.safarilounge.jp^
 ||hdlyfrxtnjpbc.site^
 ||hdmc-analytics.googlegroups.com^
@@ -101986,6 +101995,7 @@
 ||herring.artemis.cloud^
 ||herryimmixed.com^
 ||herselfshame.homes^
+||herspqrsawohn.site^
 ||herten.calderacademie.nl^
 ||hertzflow.xyz^
 ||heruliaramus.com^
@@ -103239,6 +103249,7 @@
 ||hoafdfjpxmijr.website^
 ||hoafot.itoman.com^
 ||hoakhoithanhlichmamnon9999.weebly.com^
+||hoamingurus.cfd^
 ||hoamt60fa.com^
 ||hoangkim1.org^
 ||hoanxhazxowrv.site^
@@ -111988,6 +111999,7 @@
 ||ixspublic.com^
 ||ixtzad.fetch.co.uk^
 ||ixueyi.com^
+||ixwzctdujgjwt.website^
 ||ixyryc.cocoel.co.kr^
 ||iy.agynarysyun.cyou^
 ||iy0keh7qj7.com^
@@ -112625,6 +112637,7 @@
 ||jd2ujc.cn^
 ||jd5c.top^
 ||jdabrdxqtvzrb.site^
+||jdagmrfoalhfn.space^
 ||jdata.vidmatefilm.org^
 ||jdauflfpdmoop.online^
 ||jdb.iot64.de^
@@ -112779,6 +112792,7 @@
 ||jefbhujbrbfsq.site^
 ||jefff.usalab.com^
 ||jeffreysachs.center^
+||jefigdunsfsyi.online^
 ||jeflakrlrdysq.website^
 ||jeflrvle.facialteam.eu^
 ||jegksgumzeszc.online^
@@ -117377,6 +117391,7 @@
 ||kpi.mysoberhome.nl^
 ||kpi.oprotocolodereversao.online^
 ||kpi6.com^
+||kpigpglvlxlhi.online^
 ||kpiqatawvzt.in^
 ||kpis.jp^
 ||kpjeq.tupelogoods.com^
@@ -122437,6 +122452,7 @@
 ||lkr-trk.reply.com^
 ||lkr.reply.eu^
 ||lkrszr.com^
+||lksauxpdfzhzg.online^
 ||lksbnrs.com^
 ||lksda.com^
 ||lksiz.mydancerbox.com^
@@ -132157,6 +132173,7 @@
 ||loudbasses.cyou^
 ||loudecho.ai^
 ||loudlunch.com^
+||louiesphase.com^
 ||louiseselung.com^
 ||louisvuittonreplicabag.com^
 ||loukpagina.cfd^
@@ -132535,6 +132552,7 @@
 ||lpbhnv.telemundosanantonio.com^
 ||lpbhnv.telemundoutah.com^
 ||lpbhnv.telemundowashingtondc.com^
+||lpbvpkyigicld.online^
 ||lpcci9ue6qb5je4e.rest^
 ||lpcdn.pinduoduo.com^
 ||lpcloudsvr302.com^
@@ -143202,6 +143220,7 @@
 ||menu.metu.vn^
 ||menujupenta.site^
 ||menus.today^
+||menvjblqdztan.website^
 ||menyverse.qpon^
 ||meofmukindwoul.info^
 ||meokiemtien.online^
@@ -153477,6 +153496,7 @@
 ||namespaceto234.net^
 ||namilh.com^
 ||namimedia.com^
+||namjafprwevkp.site^
 ||nammi.is^
 ||nammoprick.cyou^
 ||namnothp.com^
@@ -156914,6 +156934,7 @@
 ||nrils.michaelkors.com^
 ||nripxo.motoblok.biz^
 ||nrise.thatcertaingift.com^
+||nrivoqoauizsw.website^
 ||nrjcur.pomelofashion.com^
 ||nrjfaxyohfuvl.online^
 ||nrjqps.teufelaudio.be^
@@ -174840,6 +174861,7 @@
 ||qreport.qunar.com^
 ||qrfgfqrokccwh.site^
 ||qrfoqq.reppara.com.br^
+||qrftzbvnymqtv.space^
 ||qrgbia.unlimitedbiking.com^
 ||qrgzm.topnutritionandfitness.com^
 ||qrigpyenjfbcv.site^
@@ -175472,6 +175494,7 @@
 ||qutxilqcuqp.in^
 ||qutyan8848.com^
 ||quu175kt3.com^
+||quuacgfqxizsq.online^
 ||quuawwsijimlf.website^
 ||quudraidfg.com^
 ||quueeswrbyjqg.space^
@@ -177512,6 +177535,7 @@
 ||refinespolt.cyou^
 ||refix.ai^
 ||reflectedcockbegan.com^
+||reflecting-nature.com^
 ||reflectingbunaloud.com^
 ||reflection67.top^
 ||reflector19.com^
@@ -181368,6 +181392,7 @@
 ||rubarb.nl^
 ||rubber.eki.nl^
 ||rubberduck.suomityres.fi^
+||rubbysirloin.cyou^
 ||rubeletelench.cfd^
 ||rubelhasanrokib.adhunikfosol.com^
 ||rubelhasanrokib.haatvibe.com^
@@ -216841,6 +216866,7 @@
 ||sqnqbrpbrfowa.space^
 ||sqoutit.com^
 ||sqoutout.com^
+||sqpiyvemxlxgi.site^
 ||sqpvnivabieye.site^
 ||sqpwzuvlvxpkn.site^
 ||sqpyclvkzpgnw.space^
@@ -233523,6 +233549,7 @@
 ||stapeusd.yourh.com.br^
 ||stapevox2you.mktdrops.com^
 ||stapewebinar.sealmkt.com^
+||staphwholes.cyou^
 ||staple.metodointento.com.br^
 ||stapp.luvuna.com^
 ||stapserv.icrowdzone.com^
@@ -249010,6 +249037,7 @@
 ||tindungvietcombank.net^
 ||tinetychiffersmectic.cyou^
 ||tinfoil-is-ass.xyz^
+||tinfulsreflooduphang.cyou^
 ||ting.rockjockcock.com^
 ||ting13.cc^
 ||tinggalklik.com^
