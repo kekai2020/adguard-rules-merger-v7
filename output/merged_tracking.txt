@@ -1,7 +1,7 @@
 ! Title: Merged tracking filter (V7)
 ! Category: tracking
-! Version: 3a1aded4b422-tracking
-! Rules: 375
+! Version: 05ce99a7ffa4-tracking
+! Rules: 376
 !
 ||a-ring-fallback.msedge.net^
 ||a-ring.msedge.net^
@@ -47,6 +47,7 @@
 ||arc2.msn.com^
 ||arc3.msn.com^
 ||arc9.msn.com^
+||arctb53wmig1gagbqjqgolj2ig.msn.com^
 ||aria.microsoft.com^
 ||auc-visio-telemetry.officeapps.live.com^
 ||az667904.vo.msecnd.net^
