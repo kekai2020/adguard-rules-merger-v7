@@ -1,4 +1,5 @@
 ! Title: AdGuard Rules Merger — Whitelist (unknown)
-! Count: 1
-! Version: dd1f7c06c521
+! Count: 2
+! Version: 849b1640e5a6
+@@||mailspike.net^
 @@||tplinklogin.net^
