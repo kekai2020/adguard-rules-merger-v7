@@ -1,7 +1,7 @@
 ! Title: Merged tracking filter (V7)
 ! Category: tracking
-! Version: 709affc0b766-tracking
-! Rules: 359
+! Version: 4689c83560b9-tracking
+! Rules: 357
 !
 ||a-ring-fallback.msedge.net^
 ||a-ring.msedge.net^
@@ -38,6 +38,7 @@
 ||analyticspixel.microsoft.com^
 ||appex-rf.msn.com^
 ||applicationinsights.azure.com^
+||applicationinsights.azure.us^
 ||applicationinsights.io^
 ||applicationinsights.microsoft.com^
 ||arc-emea.msn.com^
@@ -47,6 +48,7 @@
 ||arc3.msn.com^
 ||arc9.msn.com^
 ||arctb53wmig1gagbqjqgolj2ig.msn.com^
+||aria.microsoft.com^
 ||auc-visio-telemetry.officeapps.live.com^
 ||audiobible-production-analytics-eh.servicebus.windows.net^
 ||az667904.vo.msecnd.net^
@@ -129,9 +131,9 @@
 ||collector.azure.microsoft.cloud^
 ||commerce.bing.com^
 ||confiant.msn.com^
+||data.msn.com^
 ||datamart.windows.com^
 ||dc.applicationinsights.azure.cn^
-||dc.applicationinsights.azure.us^
 ||dc.services.visualstudio.com^
 ||dec-visio-telemetry.officeapps.live.com^
 ||diagnostics-eudb.office.com^
@@ -155,10 +157,8 @@
 ||eurppc-powerpoint-telemetry.officeapps.live.com^
 ||eurppc-word-telemetry.officeapps.live.com^
 ||events-sandbox.data.microsoft.com^
-||events-sandbox.data.msn.com^
 ||events.data.microsoft.com^
 ||events.data.msn.cn^
-||events.data.msn.com^
 ||events.data.trafficmanager.net^
 ||eventservice.trafficmanager.net^
 ||excel-telemetry.officeapps.live.com^
@@ -187,7 +187,6 @@
 ||ieonline.microsoft.com^
 ||in.appcenter.ms^
 ||in.applicationinsights.azure.cn^
-||in.applicationinsights.azure.us^
 ||inc-visio-telemetry.officeapps.live.com^
 ||inference-app-gateway.eastus2.cloudapp.azure.com^
 ||inference-app-gateway.koreacentral.cloudapp.azure.com^
@@ -198,7 +197,6 @@
 ||ir-tracking.trafficmanager.net^
 ||irreverselookuptm.trafficmanager.net^
 ||ism-telemetry.trafficmanager.net^
-||js.monitor.azure.com^
 ||k-ring-fallback.msedge.net^
 ||k-ring.msedge.net^
 ||kg-legacy-analytics.servicebus.windows.net^
@@ -217,6 +215,7 @@
 ||measure.office.net.edgesuite.net^
 ||mobileads.msn.com^
 ||mobileleads.msn.com^
+||monitor.azure.com^
 ||msads.net^
 ||msadsscale.azureedge.net^
 ||msadsscale.microsoft.com^
@@ -262,7 +261,6 @@
 ||pgtus6-excel-telemetry-vip.officeapps.live.com^
 ||pgtus6-powerpoint-telemetry-vip.officeapps.live.com^
 ||pgtus6-word-telemetry-vip.officeapps.live.com^
-||pipe.aria.microsoft.com^
 ||pixel-sync.trafficmanager.net^
 ||popup.msn.com^
 ||powerpoint-telemetry.officeapps.live.com^
