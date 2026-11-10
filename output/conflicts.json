@@ -39,19 +39,6 @@
     "conflict_type": "exact"
   },
   {
-    "domain": "global.api.huangye.miui.com",
-    "blocked_rule": "||global.api.huangye.miui.com^",
-    "blocked_category": "ads",
-    "blocked_sources": [
-      "HaGeZi's Ultimate Blocklist"
-    ],
-    "whitelist_rule": "@@||api.huangye.miui.com^",
-    "whitelist_sources": [
-      "CHN: anti-AD"
-    ],
-    "conflict_type": "cascade"
-  },
-  {
     "domain": "ad.ourgame.com",
     "blocked_rule": "||ad.ourgame.com^",
     "blocked_category": "ads",
@@ -84,10 +71,10 @@
     "blocked_category": "ads",
     "blocked_sources": [
       "AWAvenue Ads Rule",
-      "HaGeZi's Ultimate Blocklist",
       "CHN: anti-AD",
-      "CHN: AdRules DNS List",
-      "OISD Blocklist Small"
+      "OISD Blocklist Small",
+      "HaGeZi's Ultimate Blocklist",
+      "CHN: AdRules DNS List"
     ],
     "whitelist_rule": "@@||ad.10010.com^",
     "whitelist_sources": [
