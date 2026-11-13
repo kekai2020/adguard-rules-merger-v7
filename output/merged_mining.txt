@@ -1,6 +1,6 @@
 ! Title: Merged mining filter (V7)
 ! Category: mining
-! Version: 23c73cf99fe5-mining
+! Version: 07d41a5f5cda-mining
 ! Rules: 163
 !
 ||1q2w3.fun^
@@ -49,7 +49,6 @@
 ||coinpot.co^
 ||coinrail.io^
 ||cpufan.club^
-||crypto-loot.com^
 ||dark-utilities.me^
 ||dark-utilities.pw^
 ||dark-utilities.xyz^
@@ -153,6 +152,7 @@
 ||sxcdn5.herokuapp.com^
 ||sxcdn6.now.sh^
 ||terorie.com^
+||thewhizmarketing.com^
 ||to-support.me^
 ||uoldid.ru^
 ||vceilinichego.ru^
