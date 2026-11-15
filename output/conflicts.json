@@ -1,18 +1,5 @@
 [
   {
-    "domain": "app.adjust.com",
-    "blocked_rule": "||app.adjust.com^",
-    "blocked_category": "ads",
-    "blocked_sources": [
-      "AdGuard DNS filter"
-    ],
-    "whitelist_rule": "@@||app.adjust.com^",
-    "whitelist_sources": [
-      "CHN: anti-AD"
-    ],
-    "conflict_type": "exact"
-  },
-  {
     "domain": "ad.10010.com",
     "blocked_rule": "||ad.10010.com^",
     "blocked_category": "ads",
@@ -40,6 +27,19 @@
     "whitelist_rule": "@@||ad.ourgame.com^",
     "whitelist_sources": [
       "AdGuard DNS filter"
+    ],
+    "conflict_type": "exact"
+  },
+  {
+    "domain": "app.adjust.com",
+    "blocked_rule": "||app.adjust.com^",
+    "blocked_category": "ads",
+    "blocked_sources": [
+      "AdGuard DNS filter"
+    ],
+    "whitelist_rule": "@@||app.adjust.com^",
+    "whitelist_sources": [
+      "CHN: anti-AD"
     ],
     "conflict_type": "exact"
   },
