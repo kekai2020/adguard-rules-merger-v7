@@ -1,6 +1,6 @@
 {
   "version": "7.0",
-  "content_version": "8ea53f0ed537",
+  "content_version": "585911a4ffec",
   "sources": {
     "total": 17,
     "ok": 17,
@@ -8,22 +8,22 @@
     "failed": []
   },
   "rules": {
-    "before": 3146057,
-    "after": 2496722,
-    "block": 2496618,
+    "before": 3152636,
+    "after": 2503045,
+    "block": 2502941,
     "allow": 104,
     "dedup_rate": 20.6
   },
   "dedup": {
-    "exact_merged": 608412,
-    "normalized_merged": 3331,
+    "exact_merged": 607609,
+    "normalized_merged": 3868,
     "regex_merged": 0
   },
   "optimization": {
-    "exact_aggregated": 37578,
+    "exact_aggregated": 38100,
     "wildcard_aggregated": 2,
     "wildcard_promoted": 0,
-    "total_aggregated": 37580,
+    "total_aggregated": 38102,
     "conflict_resolved": 6,
     "whitelist_blocked": 6
   },
@@ -37,12 +37,12 @@
     "modifier_rules_skipped": 5
   },
   "categories": {
-    "ads": 336247,
-    "malware": 1462044,
+    "ads": 340474,
+    "malware": 1459887,
     "tracking": 390,
-    "phishing": 59189,
+    "phishing": 58997,
     "mining": 166,
-    "other": 638582
+    "other": 643027
   },
   "modifier_stats": {
     "important": 5
@@ -52,167 +52,167 @@
       {
         "source_a": "AdGuard DNS filter",
         "source_b": "CHN: AdRules DNS List",
-        "overlap": 174386,
+        "overlap": 174762,
         "rate_a": 93.2,
-        "rate_b": 84.0,
-        "jaccard": 79.1
+        "rate_b": 84.7,
+        "jaccard": 79.8
       },
       {
         "source_a": "CHN: anti-AD",
         "source_b": "CHN: AdRules DNS List",
-        "overlap": 87700,
-        "rate_a": 86.6,
-        "rate_b": 42.2,
-        "jaccard": 39.6
+        "overlap": 86868,
+        "rate_a": 86.4,
+        "rate_b": 42.1,
+        "jaccard": 39.5
       },
       {
         "source_a": "CHN: AdRules DNS List",
         "source_b": "HaGeZi's Ultimate Blocklist",
-        "overlap": 85141,
-        "rate_a": 41.0,
-        "rate_b": 29.6,
-        "jaccard": 20.7
+        "overlap": 85137,
+        "rate_a": 41.3,
+        "rate_b": 28.9,
+        "jaccard": 20.5
       },
       {
         "source_a": "HaGeZi's Threat Intelligence Feeds",
         "source_b": "HaGeZi's Ultimate Blocklist",
-        "overlap": 83445,
-        "rate_a": 5.7,
-        "rate_b": 29.0,
+        "overlap": 84149,
+        "rate_a": 5.8,
+        "rate_b": 28.6,
         "jaccard": 5.0
       },
       {
         "source_a": "AdGuard DNS filter",
         "source_b": "HaGeZi's Ultimate Blocklist",
-        "overlap": 78669,
-        "rate_a": 42.1,
-        "rate_b": 27.3,
-        "jaccard": 19.8
+        "overlap": 79077,
+        "rate_a": 42.2,
+        "rate_b": 26.9,
+        "jaccard": 19.6
       },
       {
         "source_a": "AdGuard DNS filter",
         "source_b": "CHN: anti-AD",
-        "overlap": 76509,
-        "rate_a": 40.9,
-        "rate_b": 75.5,
-        "jaccard": 36.1
+        "overlap": 77439,
+        "rate_a": 41.3,
+        "rate_b": 77.1,
+        "jaccard": 36.8
       },
       {
         "source_a": "Phishing Army",
         "source_b": "HaGeZi's Threat Intelligence Feeds",
-        "overlap": 64934,
-        "rate_a": 53.4,
-        "rate_b": 4.4,
+        "overlap": 65179,
+        "rate_a": 53.5,
+        "rate_b": 4.5,
         "jaccard": 4.3
       },
       {
         "source_a": "CHN: anti-AD",
         "source_b": "HaGeZi's Ultimate Blocklist",
-        "overlap": 64576,
-        "rate_a": 63.7,
-        "rate_b": 22.4,
-        "jaccard": 19.9
+        "overlap": 65104,
+        "rate_a": 64.8,
+        "rate_b": 22.1,
+        "jaccard": 19.7
       },
       {
         "source_a": "CHN: AdRules DNS List",
         "source_b": "OISD Blocklist Small",
-        "overlap": 57845,
-        "rate_a": 27.8,
-        "rate_b": 94.1,
-        "jaccard": 27.4
+        "overlap": 57136,
+        "rate_a": 27.7,
+        "rate_b": 94.0,
+        "jaccard": 27.2
       },
       {
         "source_a": "HaGeZi's Ultimate Blocklist",
         "source_b": "OISD Blocklist Small",
-        "overlap": 56894,
-        "rate_a": 19.8,
-        "rate_b": 92.5,
-        "jaccard": 19.4
+        "overlap": 56705,
+        "rate_a": 19.3,
+        "rate_b": 93.3,
+        "jaccard": 19.0
       },
       {
         "source_a": "AdGuard DNS filter",
         "source_b": "OISD Blocklist Small",
-        "overlap": 56347,
-        "rate_a": 30.1,
-        "rate_b": 91.6,
-        "jaccard": 29.3
+        "overlap": 56589,
+        "rate_a": 30.2,
+        "rate_b": 93.1,
+        "jaccard": 29.5
       },
       {
         "source_a": "CHN: anti-AD",
         "source_b": "OISD Blocklist Small",
-        "overlap": 42847,
-        "rate_a": 42.3,
-        "rate_b": 69.7,
-        "jaccard": 35.7
+        "overlap": 42668,
+        "rate_a": 42.5,
+        "rate_b": 70.2,
+        "jaccard": 36.0
       },
       {
         "source_a": "CHN: AdRules DNS List",
         "source_b": "HaGeZi's Threat Intelligence Feeds",
-        "overlap": 21409,
-        "rate_a": 10.3,
+        "overlap": 21398,
+        "rate_a": 10.4,
         "rate_b": 1.5,
         "jaccard": 1.3
       },
       {
         "source_a": "AdGuard DNS filter",
         "source_b": "HaGeZi's Threat Intelligence Feeds",
-        "overlap": 20377,
+        "overlap": 20378,
         "rate_a": 10.9,
         "rate_b": 1.4,
         "jaccard": 1.3
       },
       {
         "source_a": "HaGeZi's Threat Intelligence Feeds",
-        "source_b": "OISD Blocklist Small",
-        "overlap": 19054,
-        "rate_a": 1.3,
-        "rate_b": 31.0,
-        "jaccard": 1.3
-      },
-      {
-        "source_a": "HaGeZi's Threat Intelligence Feeds",
         "source_b": "HaGeZi's Gambling Blocklist",
-        "overlap": 19043,
+        "overlap": 19218,
         "rate_a": 1.3,
         "rate_b": 2.9,
         "jaccard": 0.9
       },
       {
+        "source_a": "HaGeZi's Threat Intelligence Feeds",
+        "source_b": "OISD Blocklist Small",
+        "overlap": 19039,
+        "rate_a": 1.3,
+        "rate_b": 31.3,
+        "jaccard": 1.3
+      },
+      {
         "source_a": "CHN: anti-AD",
         "source_b": "HaGeZi's Threat Intelligence Feeds",
         "overlap": 18470,
-        "rate_a": 18.2,
+        "rate_a": 18.4,
         "rate_b": 1.3,
         "jaccard": 1.2
       },
       {
         "source_a": "Phishing Army",
         "source_b": "Phishing URL Blocklist (PhishTank and OpenPhish)",
-        "overlap": 13780,
-        "rate_a": 11.3,
-        "rate_b": 82.0,
-        "jaccard": 11.1
+        "overlap": 13613,
+        "rate_a": 11.2,
+        "rate_b": 82.7,
+        "jaccard": 10.9
       },
       {
         "source_a": "Phishing Army",
         "source_b": "HaGeZi's Ultimate Blocklist",
-        "overlap": 13324,
+        "overlap": 13404,
         "rate_a": 11.0,
         "rate_b": 4.6,
-        "jaccard": 3.4
+        "jaccard": 3.3
       },
       {
         "source_a": "Phishing URL Blocklist (PhishTank and OpenPhish)",
         "source_b": "HaGeZi's Threat Intelligence Feeds",
-        "overlap": 3676,
-        "rate_a": 21.9,
-        "rate_b": 0.3,
+        "overlap": 3576,
+        "rate_a": 21.7,
+        "rate_b": 0.2,
         "jaccard": 0.2
       },
       {
         "source_a": "Phishing URL Blocklist (PhishTank and OpenPhish)",
         "source_b": "HaGeZi's Ultimate Blocklist",
-        "overlap": 2145,
+        "overlap": 2110,
         "rate_a": 12.8,
         "rate_b": 0.7,
         "jaccard": 0.7
@@ -220,7 +220,7 @@
       {
         "source_a": "HaGeZi's Gambling Blocklist",
         "source_b": "HaGeZi's Ultimate Blocklist",
-        "overlap": 1619,
+        "overlap": 1621,
         "rate_a": 0.2,
         "rate_b": 0.6,
         "jaccard": 0.2
@@ -228,15 +228,15 @@
       {
         "source_a": "Malicious URL Blocklist (URLHaus)",
         "source_b": "HaGeZi's Ultimate Blocklist",
-        "overlap": 1177,
-        "rate_a": 60.2,
+        "overlap": 1171,
+        "rate_a": 59.7,
         "rate_b": 0.4,
         "jaccard": 0.4
       },
       {
         "source_a": "Malicious URL Blocklist (URLHaus)",
         "source_b": "HaGeZi's Threat Intelligence Feeds",
-        "overlap": 1124,
+        "overlap": 1129,
         "rate_a": 57.5,
         "rate_b": 0.1,
         "jaccard": 0.1
@@ -244,39 +244,39 @@
       {
         "source_a": "Scam Blocklist by DurableNapkin",
         "source_b": "CHN: AdRules DNS List",
-        "overlap": 904,
-        "rate_a": 99.6,
+        "overlap": 897,
+        "rate_a": 97.7,
         "rate_b": 0.4,
         "jaccard": 0.4
       },
       {
         "source_a": "Scam Blocklist by DurableNapkin",
         "source_b": "HaGeZi's Threat Intelligence Feeds",
-        "overlap": 829,
-        "rate_a": 91.3,
+        "overlap": 828,
+        "rate_a": 90.2,
         "rate_b": 0.1,
         "jaccard": 0.1
       },
       {
         "source_a": "HaGeZi's Ultimate Blocklist",
         "source_b": "AWAvenue Ads Rule",
-        "overlap": 727,
-        "rate_a": 0.3,
+        "overlap": 728,
+        "rate_a": 0.2,
         "rate_b": 97.3,
-        "jaccard": 0.3
+        "jaccard": 0.2
       },
       {
         "source_a": "CHN: anti-AD",
         "source_b": "AWAvenue Ads Rule",
-        "overlap": 706,
+        "overlap": 714,
         "rate_a": 0.7,
-        "rate_b": 94.5,
+        "rate_b": 95.5,
         "jaccard": 0.7
       },
       {
         "source_a": "OISD Blocklist Small",
         "source_b": "AWAvenue Ads Rule",
-        "overlap": 695,
+        "overlap": 696,
         "rate_a": 1.1,
         "rate_b": 93.0,
         "jaccard": 1.1
@@ -286,14 +286,14 @@
         "source_b": "AWAvenue Ads Rule",
         "overlap": 556,
         "rate_a": 0.3,
-        "rate_b": 74.4,
+        "rate_b": 74.3,
         "jaccard": 0.3
       },
       {
         "source_a": "Malicious URL Blocklist (URLHaus)",
         "source_b": "CHN: anti-AD",
-        "overlap": 498,
-        "rate_a": 25.5,
+        "overlap": 513,
+        "rate_a": 26.1,
         "rate_b": 0.5,
         "jaccard": 0.5
       },
@@ -325,7 +325,7 @@
         "source_a": "Scam Blocklist by DurableNapkin",
         "source_b": "HaGeZi's Ultimate Blocklist",
         "overlap": 362,
-        "rate_a": 39.9,
+        "rate_a": 39.4,
         "rate_b": 0.1,
         "jaccard": 0.1
       },
@@ -356,15 +356,15 @@
       {
         "source_a": "Stalkerware Indicators List",
         "source_b": "HaGeZi's Threat Intelligence Feeds",
-        "overlap": 216,
-        "rate_a": 42.5,
+        "overlap": 214,
+        "rate_a": 42.3,
         "rate_b": 0.0,
         "jaccard": 0.0
       },
       {
         "source_a": "Phishing Army",
         "source_b": "HaGeZi's Gambling Blocklist",
-        "overlap": 153,
+        "overlap": 151,
         "rate_a": 0.1,
         "rate_b": 0.0,
         "jaccard": 0.0
@@ -406,7 +406,7 @@
         "source_b": "ShadowWhisperer's Dating List",
         "overlap": 85,
         "rate_a": 0.0,
-        "rate_b": 6.1,
+        "rate_b": 5.9,
         "jaccard": 0.0
       },
       {
@@ -420,8 +420,8 @@
       {
         "source_a": "Stalkerware Indicators List",
         "source_b": "HaGeZi's Ultimate Blocklist",
-        "overlap": 76,
-        "rate_a": 15.0,
+        "overlap": 77,
+        "rate_a": 15.2,
         "rate_b": 0.0,
         "jaccard": 0.0
       },
@@ -470,7 +470,7 @@
         "source_b": "ShadowWhisperer's Dating List",
         "overlap": 32,
         "rate_a": 0.0,
-        "rate_b": 2.3,
+        "rate_b": 2.2,
         "jaccard": 0.0
       },
       {
@@ -502,13 +502,13 @@
         "source_b": "ShadowWhisperer's Dating List",
         "overlap": 25,
         "rate_a": 0.0,
-        "rate_b": 1.8,
+        "rate_b": 1.7,
         "jaccard": 0.0
       },
       {
         "source_a": "Phishing URL Blocklist (PhishTank and OpenPhish)",
         "source_b": "HaGeZi's Gambling Blocklist",
-        "overlap": 25,
+        "overlap": 24,
         "rate_a": 0.1,
         "rate_b": 0.0,
         "jaccard": 0.0
@@ -538,6 +538,14 @@
         "jaccard": 0.0
       },
       {
+        "source_a": "AdGuard DNS filter",
+        "source_b": "Phishing Army",
+        "overlap": 22,
+        "rate_a": 0.0,
+        "rate_b": 0.0,
+        "jaccard": 0.0
+      },
+      {
         "source_a": "CHN: anti-AD",
         "source_b": "Phishing URL Blocklist (PhishTank and OpenPhish)",
         "overlap": 22,
@@ -546,17 +554,9 @@
         "jaccard": 0.0
       },
       {
-        "source_a": "AdGuard DNS filter",
-        "source_b": "Phishing Army",
-        "overlap": 21,
-        "rate_a": 0.0,
-        "rate_b": 0.0,
-        "jaccard": 0.0
-      },
-      {
         "source_a": "HaGeZi's Threat Intelligence Feeds",
         "source_b": "ShadowWhisperer's Dating List",
-        "overlap": 19,
+        "overlap": 20,
         "rate_a": 0.0,
         "rate_b": 1.4,
         "jaccard": 0.0
@@ -803,20 +803,20 @@
       }
     ],
     "source_effective": {
-      "HaGeZi's Threat Intelligence Feeds": 1460910,
-      "HaGeZi's Gambling Blocklist": 657620,
-      "HaGeZi's Ultimate Blocklist": 288061,
-      "CHN: AdRules DNS List": 207716,
-      "AdGuard DNS filter": 187032,
-      "Phishing Army": 121658,
-      "CHN: anti-AD": 101321,
-      "OISD Blocklist Small": 61482,
-      "Phishing URL Blocklist (PhishTank and OpenPhish)": 16800,
-      "Malicious URL Blocklist (URLHaus)": 1955,
-      "ShadowWhisperer's Dating List": 1401,
-      "Scam Blocklist by DurableNapkin": 908,
-      "AWAvenue Ads Rule": 747,
-      "Stalkerware Indicators List": 508,
+      "HaGeZi's Threat Intelligence Feeds": 1458750,
+      "HaGeZi's Gambling Blocklist": 662205,
+      "HaGeZi's Ultimate Blocklist": 294430,
+      "CHN: AdRules DNS List": 206270,
+      "AdGuard DNS filter": 187426,
+      "Phishing Army": 121862,
+      "CHN: anti-AD": 100496,
+      "OISD Blocklist Small": 60795,
+      "Phishing URL Blocklist (PhishTank and OpenPhish)": 16452,
+      "Malicious URL Blocklist (URLHaus)": 1963,
+      "ShadowWhisperer's Dating List": 1438,
+      "Scam Blocklist by DurableNapkin": 918,
+      "AWAvenue Ads Rule": 748,
+      "Stalkerware Indicators List": 506,
       "HaGeZi's Windows/Office Tracker Blocklist": 390,
       "NoCoin Filter List": 269,
       "HaGeZi's DNS Rebind Protection": 57
@@ -842,20 +842,20 @@
         "HaGeZi's DNS Rebind Protection"
       ],
       "effective": {
-        "HaGeZi's Threat Intelligence Feeds": 1460910,
-        "HaGeZi's Gambling Blocklist": 657620,
-        "HaGeZi's Ultimate Blocklist": 288061,
-        "CHN: AdRules DNS List": 207716,
-        "AdGuard DNS filter": 187032,
-        "Phishing Army": 121658,
-        "CHN: anti-AD": 101321,
-        "OISD Blocklist Small": 61482,
-        "Phishing URL Blocklist (PhishTank and OpenPhish)": 16800,
-        "Malicious URL Blocklist (URLHaus)": 1955,
-        "ShadowWhisperer's Dating List": 1401,
-        "Scam Blocklist by DurableNapkin": 908,
-        "AWAvenue Ads Rule": 747,
-        "Stalkerware Indicators List": 508,
+        "HaGeZi's Threat Intelligence Feeds": 1458750,
+        "HaGeZi's Gambling Blocklist": 662205,
+        "HaGeZi's Ultimate Blocklist": 294430,
+        "CHN: AdRules DNS List": 206270,
+        "AdGuard DNS filter": 187426,
+        "Phishing Army": 121862,
+        "CHN: anti-AD": 100496,
+        "OISD Blocklist Small": 60795,
+        "Phishing URL Blocklist (PhishTank and OpenPhish)": 16452,
+        "Malicious URL Blocklist (URLHaus)": 1963,
+        "ShadowWhisperer's Dating List": 1438,
+        "Scam Blocklist by DurableNapkin": 918,
+        "AWAvenue Ads Rule": 748,
+        "Stalkerware Indicators List": 506,
         "HaGeZi's Windows/Office Tracker Blocklist": 390,
         "NoCoin Filter List": 269,
         "HaGeZi's DNS Rebind Protection": 57
@@ -863,34 +863,34 @@
       "cells": {
         "CHN: AdRules DNS List": {
           "AdGuard DNS filter": {
-            "overlap": 174386,
-            "jaccard": 79.1,
-            "rate_a": 84.0,
+            "overlap": 174762,
+            "jaccard": 79.8,
+            "rate_a": 84.7,
             "rate_b": 93.2
           },
           "CHN: anti-AD": {
-            "overlap": 87700,
-            "jaccard": 39.6,
-            "rate_a": 42.2,
-            "rate_b": 86.6
+            "overlap": 86868,
+            "jaccard": 39.5,
+            "rate_a": 42.1,
+            "rate_b": 86.4
           },
           "OISD Blocklist Small": {
-            "overlap": 57845,
-            "jaccard": 27.4,
-            "rate_a": 27.8,
-            "rate_b": 94.1
+            "overlap": 57136,
+            "jaccard": 27.2,
+            "rate_a": 27.7,
+            "rate_b": 94.0
           },
           "Scam Blocklist by DurableNapkin": {
-            "overlap": 904,
+            "overlap": 897,
             "jaccard": 0.4,
             "rate_a": 0.4,
-            "rate_b": 99.6
+            "rate_b": 97.7
           },
           "AWAvenue Ads Rule": {
             "overlap": 556,
             "jaccard": 0.3,
             "rate_a": 0.3,
-            "rate_b": 74.4
+            "rate_b": 74.3
           },
           "HaGeZi's Windows/Office Tracker Blocklist": {
             "overlap": 116,
@@ -937,51 +937,51 @@
         },
         "HaGeZi's Ultimate Blocklist": {
           "CHN: AdRules DNS List": {
-            "overlap": 85141,
-            "jaccard": 20.7,
-            "rate_a": 29.6,
-            "rate_b": 41.0
+            "overlap": 85137,
+            "jaccard": 20.5,
+            "rate_a": 28.9,
+            "rate_b": 41.3
           },
           "AdGuard DNS filter": {
-            "overlap": 78669,
-            "jaccard": 19.8,
-            "rate_a": 27.3,
-            "rate_b": 42.1
+            "overlap": 79077,
+            "jaccard": 19.6,
+            "rate_a": 26.9,
+            "rate_b": 42.2
           },
           "CHN: anti-AD": {
-            "overlap": 64576,
-            "jaccard": 19.9,
-            "rate_a": 22.4,
-            "rate_b": 63.7
+            "overlap": 65104,
+            "jaccard": 19.7,
+            "rate_a": 22.1,
+            "rate_b": 64.8
           },
           "OISD Blocklist Small": {
-            "overlap": 56894,
-            "jaccard": 19.4,
-            "rate_a": 19.8,
-            "rate_b": 92.5
+            "overlap": 56705,
+            "jaccard": 19.0,
+            "rate_a": 19.3,
+            "rate_b": 93.3
           },
           "Phishing Army": {
-            "overlap": 13324,
-            "jaccard": 3.4,
+            "overlap": 13404,
+            "jaccard": 3.3,
             "rate_a": 4.6,
             "rate_b": 11.0
           },
           "Phishing URL Blocklist (PhishTank and OpenPhish)": {
-            "overlap": 2145,
+            "overlap": 2110,
             "jaccard": 0.7,
             "rate_a": 0.7,
             "rate_b": 12.8
           },
           "Malicious URL Blocklist (URLHaus)": {
-            "overlap": 1177,
+            "overlap": 1171,
             "jaccard": 0.4,
             "rate_a": 0.4,
-            "rate_b": 60.2
+            "rate_b": 59.7
           },
           "AWAvenue Ads Rule": {
-            "overlap": 727,
-            "jaccard": 0.3,
-            "rate_a": 0.3,
+            "overlap": 728,
+            "jaccard": 0.2,
+            "rate_a": 0.2,
             "rate_b": 97.3
           },
           "HaGeZi's Windows/Office Tracker Blocklist": {
@@ -994,7 +994,7 @@
             "overlap": 362,
             "jaccard": 0.1,
             "rate_a": 0.1,
-            "rate_b": 39.9
+            "rate_b": 39.4
           },
           "NoCoin Filter List": {
             "overlap": 141,
@@ -1006,81 +1006,81 @@
             "overlap": 85,
             "jaccard": 0.0,
             "rate_a": 0.0,
-            "rate_b": 6.1
+            "rate_b": 5.9
           },
           "Stalkerware Indicators List": {
-            "overlap": 76,
+            "overlap": 77,
             "jaccard": 0.0,
             "rate_a": 0.0,
-            "rate_b": 15.0
+            "rate_b": 15.2
           }
         },
         "HaGeZi's Threat Intelligence Feeds": {
           "HaGeZi's Ultimate Blocklist": {
-            "overlap": 83445,
+            "overlap": 84149,
             "jaccard": 5.0,
-            "rate_a": 5.7,
-            "rate_b": 29.0
+            "rate_a": 5.8,
+            "rate_b": 28.6
           },
           "Phishing Army": {
-            "overlap": 64934,
+            "overlap": 65179,
             "jaccard": 4.3,
-            "rate_a": 4.4,
-            "rate_b": 53.4
+            "rate_a": 4.5,
+            "rate_b": 53.5
           },
           "CHN: AdRules DNS List": {
-            "overlap": 21409,
+            "overlap": 21398,
             "jaccard": 1.3,
             "rate_a": 1.5,
-            "rate_b": 10.3
+            "rate_b": 10.4
           },
           "AdGuard DNS filter": {
-            "overlap": 20377,
+            "overlap": 20378,
             "jaccard": 1.3,
             "rate_a": 1.4,
             "rate_b": 10.9
           },
-          "OISD Blocklist Small": {
-            "overlap": 19054,
-            "jaccard": 1.3,
-            "rate_a": 1.3,
-            "rate_b": 31.0
-          },
           "HaGeZi's Gambling Blocklist": {
-            "overlap": 19043,
+            "overlap": 19218,
             "jaccard": 0.9,
             "rate_a": 1.3,
             "rate_b": 2.9
+          },
+          "OISD Blocklist Small": {
+            "overlap": 19039,
+            "jaccard": 1.3,
+            "rate_a": 1.3,
+            "rate_b": 31.3
           },
           "CHN: anti-AD": {
             "overlap": 18470,
             "jaccard": 1.2,
             "rate_a": 1.3,
-            "rate_b": 18.2
+            "rate_b": 18.4
           },
           "Phishing URL Blocklist (PhishTank and OpenPhish)": {
-            "overlap": 3676,
+            "overlap": 3576,
             "jaccard": 0.2,
-            "rate_a": 0.3,
-            "rate_b": 21.9
+            "rate_a": 0.2,
+            "rate_b": 21.7
           },
           "Malicious URL Blocklist (URLHaus)": {
-            "overlap": 1124,
+            "overlap": 1129,
             "jaccard": 0.1,
             "rate_a": 0.1,
             "rate_b": 57.5
           },
           "Scam Blocklist by DurableNapkin": {
-            "overlap": 829,
+            "overlap": 828,
             "jaccard": 0.1,
             "rate_a": 0.1,
-            "rate_b": 91.3
+            "rate_b": 90.2
           },
           "Stalkerware Indicators List": {
-            "overlap": 216,
+            "overlap": 214,
             "jaccard": 0.0,
             "rate_a": 0.0,
-            "rate_b": 42.5
+            "rate_b": 42.3
           },
           "NoCoin Filter List": {
             "overlap": 102,
@@ -1089,7 +1089,7 @@
             "rate_b": 37.9
           },
           "ShadowWhisperer's Dating List": {
-            "overlap": 19,
+            "overlap": 20,
             "jaccard": 0.0,
             "rate_a": 0.0,
             "rate_b": 1.4
@@ -1103,16 +1103,16 @@
         },
         "AdGuard DNS filter": {
           "CHN: anti-AD": {
-            "overlap": 76509,
-            "jaccard": 36.1,
-            "rate_a": 40.9,
-            "rate_b": 75.5
+            "overlap": 77439,
+            "jaccard": 36.8,
+            "rate_a": 41.3,
+            "rate_b": 77.1
           },
           "OISD Blocklist Small": {
-            "overlap": 56347,
-            "jaccard": 29.3,
-            "rate_a": 30.1,
-            "rate_b": 91.6
+            "overlap": 56589,
+            "jaccard": 29.5,
+            "rate_a": 30.2,
+            "rate_b": 93.1
           },
           "AWAvenue Ads Rule": {
             "overlap": 246,
@@ -1130,7 +1130,7 @@
             "overlap": 32,
             "jaccard": 0.0,
             "rate_a": 0.0,
-            "rate_b": 2.3
+            "rate_b": 2.2
           },
           "HaGeZi's Windows/Office Tracker Blocklist": {
             "overlap": 26,
@@ -1151,7 +1151,7 @@
             "rate_b": 0.1
           },
           "Phishing Army": {
-            "overlap": 21,
+            "overlap": 22,
             "jaccard": 0.0,
             "rate_a": 0.0,
             "rate_b": 0.0
@@ -1171,22 +1171,22 @@
         },
         "CHN: anti-AD": {
           "OISD Blocklist Small": {
-            "overlap": 42847,
-            "jaccard": 35.7,
-            "rate_a": 42.3,
-            "rate_b": 69.7
+            "overlap": 42668,
+            "jaccard": 36.0,
+            "rate_a": 42.5,
+            "rate_b": 70.2
           },
           "AWAvenue Ads Rule": {
-            "overlap": 706,
+            "overlap": 714,
             "jaccard": 0.7,
             "rate_a": 0.7,
-            "rate_b": 94.5
+            "rate_b": 95.5
           },
           "Malicious URL Blocklist (URLHaus)": {
-            "overlap": 498,
+            "overlap": 513,
             "jaccard": 0.5,
             "rate_a": 0.5,
-            "rate_b": 25.5
+            "rate_b": 26.1
           },
           "NoCoin Filter List": {
             "overlap": 258,
@@ -1204,7 +1204,7 @@
             "overlap": 25,
             "jaccard": 0.0,
             "rate_a": 0.0,
-            "rate_b": 1.8
+            "rate_b": 1.7
           },
           "Phishing URL Blocklist (PhishTank and OpenPhish)": {
             "overlap": 22,
@@ -1227,10 +1227,10 @@
         },
         "Phishing Army": {
           "Phishing URL Blocklist (PhishTank and OpenPhish)": {
-            "overlap": 13780,
-            "jaccard": 11.1,
-            "rate_a": 11.3,
-            "rate_b": 82.0
+            "overlap": 13613,
+            "jaccard": 10.9,
+            "rate_a": 11.2,
+            "rate_b": 82.7
           },
           "Malicious URL Blocklist (URLHaus)": {
             "overlap": 8,
@@ -1259,7 +1259,7 @@
         },
         "HaGeZi's Gambling Blocklist": {
           "HaGeZi's Ultimate Blocklist": {
-            "overlap": 1619,
+            "overlap": 1621,
             "jaccard": 0.2,
             "rate_a": 0.2,
             "rate_b": 0.6
@@ -1283,7 +1283,7 @@
             "rate_b": 0.2
           },
           "Phishing Army": {
-            "overlap": 153,
+            "overlap": 151,
             "jaccard": 0.0,
             "rate_a": 0.0,
             "rate_b": 0.1
@@ -1295,7 +1295,7 @@
             "rate_b": 0.2
           },
           "Phishing URL Blocklist (PhishTank and OpenPhish)": {
-            "overlap": 25,
+            "overlap": 24,
             "jaccard": 0.0,
             "rate_a": 0.0,
             "rate_b": 0.1
@@ -1327,7 +1327,7 @@
         },
         "OISD Blocklist Small": {
           "AWAvenue Ads Rule": {
-            "overlap": 695,
+            "overlap": 696,
             "jaccard": 1.1,
             "rate_a": 1.1,
             "rate_b": 93.0
