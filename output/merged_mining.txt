@@ -1,9 +1,10 @@
 ! Title: Merged mining filter (V7)
 ! Category: mining
-! Version: b57c29e9c8fa-mining
-! Rules: 151
+! Version: a08f34d7dcff-mining
+! Rules: 145
 !
 ||1q2w3.fun^
+||2miners.com^
 ||aeros01.tk^
 ||aeros02.tk^
 ||aeros11.tk^
@@ -11,10 +12,8 @@
 ||animeteatr.ru^
 ||anybest.pw^
 ||ashgrrwt.click^
-||authedmine.com^
 ||autologica.ga^
 ||axoncoho.tk^
-||bablace.com^
 ||baiduccdn1.com^
 ||beeppool.org^
 ||berateveng.ru^
@@ -37,12 +36,9 @@
 ||clgserv.pro^
 ||cloud-miner.de^
 ||cloudcdn.gdn^
-||cnhv.co^
 ||coinhiveproxy.com^
-||coinimp.net^
 ||coinminingonline.com^
 ||coinpirate.cf^
-||coinrail.io^
 ||dark-utilities.me^
 ||dark-utilities.pw^
 ||dark-utilities.xyz^
@@ -70,7 +66,6 @@
 ||g1thub.com^
 ||gasolina.ml^
 ||gay-hotvideo.net^
-||goldoffer.online^
 ||gxbrowser.net^
 ||hashing.win^
 ||hhb123.tk^
@@ -100,7 +95,6 @@
 ||minero-proxy-02.now.sh^
 ||minero-proxy-03.now.sh^
 ||minero.pw^
-||minescripts.info^
 ||minexmr.stream^
 ||minr.pw^
 ||monero-miner.com^
