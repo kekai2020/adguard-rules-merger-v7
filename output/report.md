@@ -1,16 +1,16 @@
 # AdGuard Rules Merger V7 — 规则分析报告
 
-> 内容版本 d5cb0a85b298 | 源：17/17
+> 内容版本 eb0c7a3a4c33 | 源：17/17
 
 ## 一、概览
 
 | 指标 | 数值 |
 |------|------|
-| Block 规则 | 2,571,337 |
+| Block 规则 | 2,375,943 |
 | Allow 白名单 | 104 |
-| 综合去重率 | 21.5% |
-| 聚合精简 | 41,006 |
-| 冲突消解 | 7 |
+| 综合去重率 | 25.1% |
+| 聚合精简 | 42,457 |
+| 冲突消解 | 6 |
 | 带 $ 修饰符规则 | 5 |
 | 总耗时 | — |
 
@@ -18,10 +18,10 @@
 
 | 阶段 | 规则数 | 本阶段减少 |
 |------|--------|-----------|
-| 原始规则（Raw） | 3,276,548 | - |
-| 去重后（精确 660,429 / 规范化 3,659 / 正则 0） | 2,612,460 | -664,088 |
-| 聚合后（精确 41,004 / 通配符 2 / 升级 0） | 2,571,454 | -41,006 |
-| 冲突消解后 | 2,571,441 | -7 |
+| 原始规则（Raw） | 3,174,293 | - |
+| 去重后（精确 752,840 / 规范化 2,937 / 正则 0） | 2,418,516 | -755,777 |
+| 聚合后（精确 42,455 / 通配符 2 / 升级 0） | 2,376,059 | -42,457 |
+| 冲突消解后 | 2,376,047 | -6 |
 
 ## 三、规则类型与类别分布
 
@@ -29,7 +29,7 @@
 
 | 类型 | 数量 |
 |------|------|
-| domain | 2,571,306 |
+| domain | 2,375,912 |
 | ip | 74 |
 | regex | 61 |
 
@@ -37,12 +37,12 @@
 
 | 类别 | 数量 |
 |------|------|
-| malware | 1,574,725 |
-| other | 607,959 |
-| ads | 329,726 |
-| phishing | 58,387 |
-| tracking | 389 |
-| mining | 151 |
+| malware | 1,466,315 |
+| other | 524,744 |
+| ads | 326,182 |
+| phishing | 58,169 |
+| tracking | 387 |
+| mining | 146 |
 
 ## 四、按源贡献分析（独占 vs 共享）
 
@@ -50,23 +50,23 @@
 
 | 源 | 原始规则 | 输出覆盖 | 覆盖率 | 独占规则 | 与他源共享 | 独占率 |
 |------|---------|---------|--------|---------|-----------|--------|
-| HaGeZi's Threat Intelligence Feeds | 1,576,614 | 1,573,599 | 99.8% | 1,364,391 | 209,208 | 86.7% |
-| HaGeZi's Gambling Blocklist | 676,155 | 675,952 | 100.0% | 606,625 | 69,327 | 89.7% |
-| HaGeZi's Ultimate Blocklist | 286,259 | 283,286 | 99.0% | 127,974 | 155,312 | 45.2% |
-| Phishing Army | 146,816 | 123,327 | 84.0% | 45,466 | 77,861 | 36.9% |
-| CHN: AdRules DNS List | 211,712 | 207,650 | 98.1% | 9,235 | 198,415 | 4.4% |
-| CHN: anti-AD | 102,112 | 101,422 | 99.3% | 7,362 | 94,060 | 7.3% |
-| AdGuard DNS filter | 191,123 | 188,603 | 98.7% | 4,849 | 183,754 | 2.6% |
-| Phishing URL Blocklist (PhishTank and OpenPhish) | 16,962 | 15,874 | 93.6% | 2,126 | 13,748 | 13.4% |
-| ShadowWhisperer's Dating List | 1,438 | 1,438 | 100.0% | 1,335 | 103 | 92.8% |
-| Malicious URL Blocklist (URLHaus) | 2,090 | 1,978 | 94.6% | 655 | 1,323 | 33.1% |
-| Stalkerware Indicators List | 929 | 515 | 55.4% | 263 | 252 | 51.1% |
+| HaGeZi's Threat Intelligence Feeds | 1,466,243 | 1,465,244 | 99.9% | 1,162,340 | 302,904 | 79.3% |
+| HaGeZi's Gambling Blocklist | 683,157 | 682,824 | 100.0% | 523,413 | 159,411 | 76.7% |
+| HaGeZi's Ultimate Blocklist | 286,753 | 283,637 | 98.9% | 124,203 | 159,434 | 43.8% |
+| Phishing Army | 146,651 | 122,977 | 83.9% | 45,397 | 77,580 | 36.9% |
+| CHN: AdRules DNS List | 212,061 | 207,791 | 98.0% | 9,210 | 198,581 | 4.4% |
+| CHN: anti-AD | 102,112 | 101,381 | 99.3% | 7,362 | 94,019 | 7.3% |
+| AdGuard DNS filter | 191,479 | 188,770 | 98.6% | 4,855 | 183,915 | 2.6% |
+| Phishing URL Blocklist (PhishTank and OpenPhish) | 16,803 | 15,644 | 93.1% | 2,121 | 13,523 | 13.6% |
+| ShadowWhisperer's Dating List | 1,438 | 1,438 | 100.0% | 1,332 | 106 | 92.6% |
+| Malicious URL Blocklist (URLHaus) | 2,105 | 1,980 | 94.1% | 670 | 1,310 | 33.8% |
+| Stalkerware Indicators List | 929 | 501 | 53.9% | 199 | 302 | 39.7% |
 | HaGeZi's DNS Rebind Protection | 57 | 57 | 100.0% | 57 | 0 | 100.0% |
-| OISD Blocklist Small | 61,744 | 60,092 | 97.3% | 9 | 60,083 | 0.0% |
-| Scam Blocklist by DurableNapkin | 909 | 905 | 99.6% | 8 | 897 | 0.9% |
-| HaGeZi's Windows/Office Tracker Blocklist | 398 | 390 | 98.0% | 3 | 387 | 0.8% |
+| OISD Blocklist Small | 61,971 | 60,168 | 97.1% | 9 | 60,159 | 0.0% |
+| Scam Blocklist by DurableNapkin | 909 | 905 | 99.6% | 4 | 901 | 0.4% |
 | NoCoin Filter List | 312 | 269 | 86.2% | 3 | 266 | 1.1% |
-| AWAvenue Ads Rule | 918 | 748 | 81.5% | 0 | 748 | 0.0% |
+| HaGeZi's Windows/Office Tracker Blocklist | 395 | 387 | 98.0% | 1 | 386 | 0.3% |
+| AWAvenue Ads Rule | 918 | 747 | 81.4% | 0 | 747 | 0.0% |
 
 ## 五、源间重复矩阵（两两重复规则数 + 重复率）
 
@@ -74,43 +74,43 @@
 
 | # | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| **1** | **1,573,599** | 🟩 68,158 (3.1%) | 🟩 84,624 (4.8%) | 🟩 27,599 (1.6%) | 🟩 26,196 (1.5%) | 🟩 67,277 (4.1%) | 🟩 21,942 (1.3%) | 🟩 21,645 (1.3%) | 🟩 3,627 (0.2%) | 🟩 1,150 (0.1%) | 🟩 21 (0.0%) | 🟩 829 (0.1%) | 🟩 15 (0.0%) | 🟩 228 (0.0%) | 🟩 1 (0.0%) | 🟩 117 (0.0%) | · |
-| **2** | 🟩 68,158 (3.1%) | **675,952** | 🟩 1,611 (0.2%) | 🟩 469 (0.1%) | 🟩 424 (0.0%) | 🟩 149 (0.0%) | 🟩 220 (0.0%) | 🟩 148 (0.0%) | 🟩 25 (0.0%) | 🟩 4 (0.0%) | · | 🟩 4 (0.0%) | · | 🟩 1 (0.0%) | · | 🟩 1 (0.0%) | · |
-| **3** | 🟩 84,624 (4.8%) | 🟩 1,611 (0.2%) | **283,286** | 🟨 85,771 (21.2%) | 🟨 79,762 (20.3%) | 🟩 13,594 (3.5%) | 🟨 65,636 (20.6%) | 🟩 56,058 (19.5%) | 🟩 1,925 (0.6%) | 🟩 1,077 (0.4%) | 🟩 86 (0.0%) | 🟩 358 (0.1%) | 🟩 728 (0.3%) | 🟩 77 (0.0%) | 🟩 385 (0.1%) | 🟩 140 (0.0%) | · |
-| **4** | 🟩 27,599 (1.6%) | 🟩 469 (0.1%) | 🟨 85,771 (21.2%) | **207,650** | 🟧 175,910 (79.8%) | 🟩 41 (0.0%) | 🟨 87,777 (39.7%) | 🟨 56,462 (26.7%) | 🟩 29 (0.0%) | 🟩 8 (0.0%) | 🟩 37 (0.0%) | 🟩 897 (0.4%) | 🟩 555 (0.3%) | 🟩 3 (0.0%) | 🟩 117 (0.1%) | 🟩 80 (0.0%) | · |
-| **5** | 🟩 26,196 (1.5%) | 🟩 424 (0.0%) | 🟨 79,762 (20.3%) | 🟧 175,910 (79.8%) | **188,603** | 🟩 21 (0.0%) | 🟨 78,337 (37.0%) | 🟨 55,918 (29.0%) | 🟩 23 (0.0%) | 🟩 3 (0.0%) | 🟩 32 (0.0%) | 🟩 23 (0.0%) | 🟩 246 (0.1%) | 🟩 2 (0.0%) | 🟩 26 (0.0%) | 🟩 43 (0.0%) | · |
-| **6** | 🟩 67,277 (4.1%) | 🟩 149 (0.0%) | 🟩 13,594 (3.5%) | 🟩 41 (0.0%) | 🟩 21 (0.0%) | **123,327** | 🟩 8 (0.0%) | 🟩 9 (0.0%) | 🟩 12,955 (10.3%) | 🟩 9 (0.0%) | · | 🟩 5 (0.0%) | · | · | · | · | · |
-| **7** | 🟩 21,942 (1.3%) | 🟩 220 (0.0%) | 🟨 65,636 (20.6%) | 🟨 87,777 (39.7%) | 🟨 78,337 (37.0%) | 🟩 8 (0.0%) | **101,422** | 🟨 42,016 (35.2%) | 🟩 22 (0.0%) | 🟩 522 (0.5%) | 🟩 25 (0.0%) | 🟩 9 (0.0%) | 🟩 714 (0.7%) | 🟩 5 (0.0%) | 🟩 69 (0.1%) | 🟩 258 (0.3%) | · |
-| **8** | 🟩 21,645 (1.3%) | 🟩 148 (0.0%) | 🟩 56,058 (19.5%) | 🟨 56,462 (26.7%) | 🟨 55,918 (29.0%) | 🟩 9 (0.0%) | 🟨 42,016 (35.2%) | **60,092** | 🟩 11 (0.0%) | 🟩 5 (0.0%) | 🟩 23 (0.0%) | 🟩 13 (0.0%) | 🟩 696 (1.2%) | 🟩 1 (0.0%) | 🟩 26 (0.0%) | 🟩 49 (0.1%) | · |
-| **9** | 🟩 3,627 (0.2%) | 🟩 25 (0.0%) | 🟩 1,925 (0.6%) | 🟩 29 (0.0%) | 🟩 23 (0.0%) | 🟩 12,955 (10.3%) | 🟩 22 (0.0%) | 🟩 11 (0.0%) | **15,874** | 🟩 11 (0.1%) | · | 🟩 4 (0.0%) | 🟩 1 (0.0%) | 🟩 1 (0.0%) | · | 🟩 2 (0.0%) | · |
-| **10** | 🟩 1,150 (0.1%) | 🟩 4 (0.0%) | 🟩 1,077 (0.4%) | 🟩 8 (0.0%) | 🟩 3 (0.0%) | 🟩 9 (0.0%) | 🟩 522 (0.5%) | 🟩 5 (0.0%) | 🟩 11 (0.1%) | **1,978** | · | 🟩 1 (0.0%) | · | 🟩 1 (0.0%) | · | · | · |
-| **11** | 🟩 21 (0.0%) | · | 🟩 86 (0.0%) | 🟩 37 (0.0%) | 🟩 32 (0.0%) | · | 🟩 25 (0.0%) | 🟩 23 (0.0%) | · | · | **1,438** | 🟩 2 (0.1%) | · | · | · | · | · |
-| **12** | 🟩 829 (0.1%) | 🟩 4 (0.0%) | 🟩 358 (0.1%) | 🟩 897 (0.4%) | 🟩 23 (0.0%) | 🟩 5 (0.0%) | 🟩 9 (0.0%) | 🟩 13 (0.0%) | 🟩 4 (0.0%) | 🟩 1 (0.0%) | 🟩 2 (0.1%) | **905** | · | · | · | 🟩 1 (0.1%) | · |
-| **13** | 🟩 15 (0.0%) | · | 🟩 728 (0.3%) | 🟩 555 (0.3%) | 🟩 246 (0.1%) | · | 🟩 714 (0.7%) | 🟩 696 (1.2%) | 🟩 1 (0.0%) | · | · | · | **748** | 🟩 1 (0.1%) | 🟩 6 (0.5%) | · | · |
-| **14** | 🟩 228 (0.0%) | 🟩 1 (0.0%) | 🟩 77 (0.0%) | 🟩 3 (0.0%) | 🟩 2 (0.0%) | · | 🟩 5 (0.0%) | 🟩 1 (0.0%) | 🟩 1 (0.0%) | 🟩 1 (0.0%) | · | · | 🟩 1 (0.1%) | **515** | · | · | · |
-| **15** | 🟩 1 (0.0%) | · | 🟩 385 (0.1%) | 🟩 117 (0.1%) | 🟩 26 (0.0%) | · | 🟩 69 (0.1%) | 🟩 26 (0.0%) | · | · | · | · | 🟩 6 (0.5%) | · | **390** | · | · |
-| **16** | 🟩 117 (0.0%) | 🟩 1 (0.0%) | 🟩 140 (0.0%) | 🟩 80 (0.0%) | 🟩 43 (0.0%) | · | 🟩 258 (0.3%) | 🟩 49 (0.1%) | 🟩 2 (0.0%) | · | · | 🟩 1 (0.1%) | · | · | · | **269** | · |
+| **1** | **1,465,244** | 🟩 158,242 (8.0%) | 🟩 87,281 (5.3%) | 🟩 27,758 (1.7%) | 🟩 26,215 (1.6%) | 🟩 67,136 (4.4%) | 🟩 21,082 (1.4%) | 🟩 24,187 (1.6%) | 🟩 3,537 (0.2%) | 🟩 1,133 (0.1%) | 🟩 28 (0.0%) | 🟩 831 (0.1%) | 🟩 19 (0.0%) | 🟩 288 (0.0%) | · | 🟩 122 (0.0%) | · |
+| **2** | 🟩 158,242 (8.0%) | **682,824** | 🟩 1,648 (0.2%) | 🟩 473 (0.1%) | 🟩 425 (0.0%) | 🟩 158 (0.0%) | 🟩 222 (0.0%) | 🟩 150 (0.0%) | 🟩 30 (0.0%) | 🟩 5 (0.0%) | · | 🟩 4 (0.0%) | · | 🟩 1 (0.0%) | · | 🟩 1 (0.0%) | · |
+| **3** | 🟩 87,281 (5.3%) | 🟩 1,648 (0.2%) | **283,637** | 🟨 86,053 (21.2%) | 🟨 80,022 (20.4%) | 🟩 13,579 (3.5%) | 🟨 65,587 (20.5%) | 🟩 56,279 (19.6%) | 🟩 1,897 (0.6%) | 🟩 1,056 (0.4%) | 🟩 86 (0.0%) | 🟩 357 (0.1%) | 🟩 727 (0.3%) | 🟩 79 (0.0%) | 🟩 384 (0.1%) | 🟩 140 (0.0%) | · |
+| **4** | 🟩 27,758 (1.7%) | 🟩 473 (0.1%) | 🟨 86,053 (21.2%) | **207,791** | 🟧 176,091 (79.9%) | 🟩 42 (0.0%) | 🟨 87,748 (39.6%) | 🟨 56,548 (26.7%) | 🟩 29 (0.0%) | 🟩 9 (0.0%) | 🟩 37 (0.0%) | 🟩 901 (0.4%) | 🟩 555 (0.3%) | 🟩 3 (0.0%) | 🟩 117 (0.1%) | 🟩 80 (0.0%) | · |
+| **5** | 🟩 26,215 (1.6%) | 🟩 425 (0.0%) | 🟨 80,022 (20.4%) | 🟧 176,091 (79.9%) | **188,770** | 🟩 22 (0.0%) | 🟨 78,333 (37.0%) | 🟨 55,996 (29.0%) | 🟩 23 (0.0%) | 🟩 4 (0.0%) | 🟩 32 (0.0%) | 🟩 23 (0.0%) | 🟩 246 (0.1%) | 🟩 2 (0.0%) | 🟩 26 (0.0%) | 🟩 43 (0.0%) | · |
+| **6** | 🟩 67,136 (4.4%) | 🟩 158 (0.0%) | 🟩 13,579 (3.5%) | 🟩 42 (0.0%) | 🟩 22 (0.0%) | **122,977** | 🟩 9 (0.0%) | 🟩 9 (0.0%) | 🟩 12,746 (10.1%) | 🟩 9 (0.0%) | · | 🟩 5 (0.0%) | · | · | · | · | · |
+| **7** | 🟩 21,082 (1.4%) | 🟩 222 (0.0%) | 🟨 65,587 (20.5%) | 🟨 87,748 (39.6%) | 🟨 78,333 (37.0%) | 🟩 9 (0.0%) | **101,381** | 🟨 42,009 (35.1%) | 🟩 22 (0.0%) | 🟩 509 (0.5%) | 🟩 25 (0.0%) | 🟩 9 (0.0%) | 🟩 713 (0.7%) | 🟩 5 (0.0%) | 🟩 69 (0.1%) | 🟩 258 (0.3%) | · |
+| **8** | 🟩 24,187 (1.6%) | 🟩 150 (0.0%) | 🟩 56,279 (19.6%) | 🟨 56,548 (26.7%) | 🟨 55,996 (29.0%) | 🟩 9 (0.0%) | 🟨 42,009 (35.1%) | **60,168** | 🟩 11 (0.0%) | 🟩 6 (0.0%) | 🟩 23 (0.0%) | 🟩 13 (0.0%) | 🟩 695 (1.2%) | 🟩 1 (0.0%) | 🟩 26 (0.0%) | 🟩 49 (0.1%) | · |
+| **9** | 🟩 3,537 (0.2%) | 🟩 30 (0.0%) | 🟩 1,897 (0.6%) | 🟩 29 (0.0%) | 🟩 23 (0.0%) | 🟩 12,746 (10.1%) | 🟩 22 (0.0%) | 🟩 11 (0.0%) | **15,644** | 🟩 11 (0.1%) | · | 🟩 4 (0.0%) | 🟩 1 (0.0%) | 🟩 1 (0.0%) | · | 🟩 2 (0.0%) | · |
+| **10** | 🟩 1,133 (0.1%) | 🟩 5 (0.0%) | 🟩 1,056 (0.4%) | 🟩 9 (0.0%) | 🟩 4 (0.0%) | 🟩 9 (0.0%) | 🟩 509 (0.5%) | 🟩 6 (0.0%) | 🟩 11 (0.1%) | **1,980** | · | 🟩 1 (0.0%) | · | 🟩 1 (0.0%) | · | · | · |
+| **11** | 🟩 28 (0.0%) | · | 🟩 86 (0.0%) | 🟩 37 (0.0%) | 🟩 32 (0.0%) | · | 🟩 25 (0.0%) | 🟩 23 (0.0%) | · | · | **1,438** | 🟩 2 (0.1%) | · | · | · | · | · |
+| **12** | 🟩 831 (0.1%) | 🟩 4 (0.0%) | 🟩 357 (0.1%) | 🟩 901 (0.4%) | 🟩 23 (0.0%) | 🟩 5 (0.0%) | 🟩 9 (0.0%) | 🟩 13 (0.0%) | 🟩 4 (0.0%) | 🟩 1 (0.0%) | 🟩 2 (0.1%) | **905** | · | · | · | 🟩 1 (0.1%) | · |
+| **13** | 🟩 19 (0.0%) | · | 🟩 727 (0.3%) | 🟩 555 (0.3%) | 🟩 246 (0.1%) | · | 🟩 713 (0.7%) | 🟩 695 (1.2%) | 🟩 1 (0.0%) | · | · | · | **747** | 🟩 1 (0.1%) | 🟩 6 (0.5%) | · | · |
+| **14** | 🟩 288 (0.0%) | 🟩 1 (0.0%) | 🟩 79 (0.0%) | 🟩 3 (0.0%) | 🟩 2 (0.0%) | · | 🟩 5 (0.0%) | 🟩 1 (0.0%) | 🟩 1 (0.0%) | 🟩 1 (0.0%) | · | · | 🟩 1 (0.1%) | **501** | · | · | · |
+| **15** | · | · | 🟩 384 (0.1%) | 🟩 117 (0.1%) | 🟩 26 (0.0%) | · | 🟩 69 (0.1%) | 🟩 26 (0.0%) | · | · | · | · | 🟩 6 (0.5%) | · | **387** | · | · |
+| **16** | 🟩 122 (0.0%) | 🟩 1 (0.0%) | 🟩 140 (0.0%) | 🟩 80 (0.0%) | 🟩 43 (0.0%) | · | 🟩 258 (0.3%) | 🟩 49 (0.1%) | 🟩 2 (0.0%) | · | · | 🟩 1 (0.1%) | · | · | · | **269** | · |
 | **17** | · | · | · | · | · | · | · | · | · | · | · | · | · | · | · | · | **57** |
 
 **源编号对照**（按输出覆盖降序）
 
 | # | 源 | 输出覆盖 |
 |---|---|----------|
-| 1 | HaGeZi's Threat Intelligence Feeds | 1,573,599 |
-| 2 | HaGeZi's Gambling Blocklist | 675,952 |
-| 3 | HaGeZi's Ultimate Blocklist | 283,286 |
-| 4 | CHN: AdRules DNS List | 207,650 |
-| 5 | AdGuard DNS filter | 188,603 |
-| 6 | Phishing Army | 123,327 |
-| 7 | CHN: anti-AD | 101,422 |
-| 8 | OISD Blocklist Small | 60,092 |
-| 9 | Phishing URL Blocklist (PhishTank and OpenPhish) | 15,874 |
-| 10 | Malicious URL Blocklist (URLHaus) | 1,978 |
+| 1 | HaGeZi's Threat Intelligence Feeds | 1,465,244 |
+| 2 | HaGeZi's Gambling Blocklist | 682,824 |
+| 3 | HaGeZi's Ultimate Blocklist | 283,637 |
+| 4 | CHN: AdRules DNS List | 207,791 |
+| 5 | AdGuard DNS filter | 188,770 |
+| 6 | Phishing Army | 122,977 |
+| 7 | CHN: anti-AD | 101,381 |
+| 8 | OISD Blocklist Small | 60,168 |
+| 9 | Phishing URL Blocklist (PhishTank and OpenPhish) | 15,644 |
+| 10 | Malicious URL Blocklist (URLHaus) | 1,980 |
 | 11 | ShadowWhisperer's Dating List | 1,438 |
 | 12 | Scam Blocklist by DurableNapkin | 905 |
-| 13 | AWAvenue Ads Rule | 748 |
-| 14 | Stalkerware Indicators List | 515 |
-| 15 | HaGeZi's Windows/Office Tracker Blocklist | 390 |
+| 13 | AWAvenue Ads Rule | 747 |
+| 14 | Stalkerware Indicators List | 501 |
+| 15 | HaGeZi's Windows/Office Tracker Blocklist | 387 |
 | 16 | NoCoin Filter List | 269 |
 | 17 | HaGeZi's DNS Rebind Protection | 57 |
 
@@ -120,26 +120,26 @@
 
 | 源 A | 源 B | 共同规则数 | 重复率 | A 覆盖率 | B 覆盖率 |
 |------|------|-----------|--------|---------|---------|
-| AdGuard DNS filter | CHN: AdRules DNS List | 175,910 | 🟧 79.8% | 93.3% | 84.7% |
-| CHN: anti-AD | CHN: AdRules DNS List | 87,777 | 🟨 39.7% | 86.5% | 42.3% |
-| CHN: AdRules DNS List | HaGeZi's Ultimate Blocklist | 85,771 | 🟨 21.2% | 41.3% | 30.3% |
-| HaGeZi's Threat Intelligence Feeds | HaGeZi's Ultimate Blocklist | 84,624 | 🟩 4.8% | 5.4% | 29.9% |
-| AdGuard DNS filter | HaGeZi's Ultimate Blocklist | 79,762 | 🟨 20.3% | 42.3% | 28.2% |
-| AdGuard DNS filter | CHN: anti-AD | 78,337 | 🟨 37.0% | 41.5% | 77.2% |
-| HaGeZi's Threat Intelligence Feeds | HaGeZi's Gambling Blocklist | 68,158 | 🟩 3.1% | 4.3% | 10.1% |
-| Phishing Army | HaGeZi's Threat Intelligence Feeds | 67,277 | 🟩 4.1% | 54.6% | 4.3% |
-| CHN: anti-AD | HaGeZi's Ultimate Blocklist | 65,636 | 🟨 20.6% | 64.7% | 23.2% |
-| CHN: AdRules DNS List | OISD Blocklist Small | 56,462 | 🟨 26.7% | 27.2% | 94.0% |
-| HaGeZi's Ultimate Blocklist | OISD Blocklist Small | 56,058 | 🟩 19.5% | 19.8% | 93.3% |
-| AdGuard DNS filter | OISD Blocklist Small | 55,918 | 🟨 29.0% | 29.6% | 93.1% |
-| CHN: anti-AD | OISD Blocklist Small | 42,016 | 🟨 35.2% | 41.4% | 69.9% |
-| CHN: AdRules DNS List | HaGeZi's Threat Intelligence Feeds | 27,599 | 🟩 1.6% | 13.3% | 1.8% |
-| AdGuard DNS filter | HaGeZi's Threat Intelligence Feeds | 26,196 | 🟩 1.5% | 13.9% | 1.7% |
-| CHN: anti-AD | HaGeZi's Threat Intelligence Feeds | 21,942 | 🟩 1.3% | 21.6% | 1.4% |
-| HaGeZi's Threat Intelligence Feeds | OISD Blocklist Small | 21,645 | 🟩 1.3% | 1.4% | 36.0% |
-| Phishing Army | HaGeZi's Ultimate Blocklist | 13,594 | 🟩 3.5% | 11.0% | 4.8% |
-| Phishing Army | Phishing URL Blocklist (PhishTank and OpenPhish) | 12,955 | 🟩 10.3% | 10.5% | 81.6% |
-| Phishing URL Blocklist (PhishTank and OpenPhish) | HaGeZi's Threat Intelligence Feeds | 3,627 | 🟩 0.2% | 22.8% | 0.2% |
+| AdGuard DNS filter | CHN: AdRules DNS List | 176,091 | 🟧 79.9% | 93.3% | 84.7% |
+| HaGeZi's Threat Intelligence Feeds | HaGeZi's Gambling Blocklist | 158,242 | 🟩 8.0% | 10.8% | 23.2% |
+| CHN: anti-AD | CHN: AdRules DNS List | 87,748 | 🟨 39.6% | 86.6% | 42.2% |
+| HaGeZi's Threat Intelligence Feeds | HaGeZi's Ultimate Blocklist | 87,281 | 🟩 5.3% | 6.0% | 30.8% |
+| CHN: AdRules DNS List | HaGeZi's Ultimate Blocklist | 86,053 | 🟨 21.2% | 41.4% | 30.3% |
+| AdGuard DNS filter | HaGeZi's Ultimate Blocklist | 80,022 | 🟨 20.4% | 42.4% | 28.2% |
+| AdGuard DNS filter | CHN: anti-AD | 78,333 | 🟨 37.0% | 41.5% | 77.3% |
+| Phishing Army | HaGeZi's Threat Intelligence Feeds | 67,136 | 🟩 4.4% | 54.6% | 4.6% |
+| CHN: anti-AD | HaGeZi's Ultimate Blocklist | 65,587 | 🟨 20.5% | 64.7% | 23.1% |
+| CHN: AdRules DNS List | OISD Blocklist Small | 56,548 | 🟨 26.7% | 27.2% | 94.0% |
+| HaGeZi's Ultimate Blocklist | OISD Blocklist Small | 56,279 | 🟩 19.6% | 19.8% | 93.5% |
+| AdGuard DNS filter | OISD Blocklist Small | 55,996 | 🟨 29.0% | 29.7% | 93.1% |
+| CHN: anti-AD | OISD Blocklist Small | 42,009 | 🟨 35.1% | 41.4% | 69.8% |
+| CHN: AdRules DNS List | HaGeZi's Threat Intelligence Feeds | 27,758 | 🟩 1.7% | 13.4% | 1.9% |
+| AdGuard DNS filter | HaGeZi's Threat Intelligence Feeds | 26,215 | 🟩 1.6% | 13.9% | 1.8% |
+| HaGeZi's Threat Intelligence Feeds | OISD Blocklist Small | 24,187 | 🟩 1.6% | 1.7% | 40.2% |
+| CHN: anti-AD | HaGeZi's Threat Intelligence Feeds | 21,082 | 🟩 1.4% | 20.8% | 1.4% |
+| Phishing Army | HaGeZi's Ultimate Blocklist | 13,579 | 🟩 3.5% | 11.0% | 4.8% |
+| Phishing Army | Phishing URL Blocklist (PhishTank and OpenPhish) | 12,746 | 🟩 10.1% | 10.4% | 81.5% |
+| Phishing URL Blocklist (PhishTank and OpenPhish) | HaGeZi's Threat Intelligence Feeds | 3,537 | 🟩 0.2% | 22.6% | 0.2% |
 
 ## 六、各源自去重率
 
@@ -147,21 +147,21 @@
 
 | 源 | 原始规则 | 去重后有效 | 自去重率 |
 |------|---------|-----------|---------|
-| HaGeZi's Threat Intelligence Feeds | 1,576,614 | 1,573,599 | 0.2% |
-| HaGeZi's Gambling Blocklist | 676,155 | 675,952 | 0.0% |
-| HaGeZi's Ultimate Blocklist | 286,259 | 283,286 | 1.0% |
-| CHN: AdRules DNS List | 211,712 | 207,650 | 1.9% |
-| AdGuard DNS filter | 191,123 | 188,603 | 1.3% |
-| Phishing Army | 146,816 | 123,327 | 16.0% |
-| CHN: anti-AD | 102,112 | 101,422 | 0.7% |
-| OISD Blocklist Small | 61,744 | 60,092 | 2.7% |
-| Phishing URL Blocklist (PhishTank and OpenPhish) | 16,962 | 15,874 | 6.4% |
-| Malicious URL Blocklist (URLHaus) | 2,090 | 1,978 | 5.4% |
+| HaGeZi's Threat Intelligence Feeds | 1,466,243 | 1,465,244 | 0.1% |
+| HaGeZi's Gambling Blocklist | 683,157 | 682,824 | 0.0% |
+| HaGeZi's Ultimate Blocklist | 286,753 | 283,637 | 1.1% |
+| CHN: AdRules DNS List | 212,061 | 207,791 | 2.0% |
+| AdGuard DNS filter | 191,479 | 188,770 | 1.4% |
+| Phishing Army | 146,651 | 122,977 | 16.1% |
+| CHN: anti-AD | 102,112 | 101,381 | 0.7% |
+| OISD Blocklist Small | 61,971 | 60,168 | 2.9% |
+| Phishing URL Blocklist (PhishTank and OpenPhish) | 16,803 | 15,644 | 6.9% |
+| Malicious URL Blocklist (URLHaus) | 2,105 | 1,980 | 5.9% |
 | ShadowWhisperer's Dating List | 1,438 | 1,438 | 0.0% |
 | Scam Blocklist by DurableNapkin | 909 | 905 | 0.4% |
-| AWAvenue Ads Rule | 918 | 748 | 18.5% |
-| Stalkerware Indicators List | 929 | 515 | 44.6% |
-| HaGeZi's Windows/Office Tracker Blocklist | 398 | 390 | 2.0% |
+| AWAvenue Ads Rule | 918 | 747 | 18.6% |
+| Stalkerware Indicators List | 929 | 501 | 46.1% |
+| HaGeZi's Windows/Office Tracker Blocklist | 395 | 387 | 2.0% |
 | NoCoin Filter List | 312 | 269 | 13.8% |
 | HaGeZi's DNS Rebind Protection | 57 | 57 | 0.0% |
 
@@ -171,13 +171,12 @@
 
 | 域名 | 被拦规则 | 被拦来源 | 白名单规则 | 白名单来源 | 类型 |
 |------|---------|---------|-----------|-----------|------|
-| `ad.10010.com` | `||ad.10010.com^` | AWAvenue Ads Rule, OISD Blocklist Small, CHN: AdRules DNS List, CHN: anti-AD, HaGeZi's Ultimate Blocklist | `@@||ad.10010.com^` | AdGuard DNS filter | 精确 |
-| `ad.ourgame.com` | `||ad.ourgame.com^` | CHN: AdRules DNS List, HaGeZi's Ultimate Blocklist | `@@||ad.ourgame.com^` | AdGuard DNS filter | 精确 |
 | `autocomplete.clearbit.com` | `||autocomplete.clearbit.com^` | HaGeZi's Ultimate Blocklist | `@@||autocomplete.clearbit.com^` | CHN: anti-AD | 精确 |
 | `settings-win.data.microsoft.com` | `||settings-win.data.microsoft.com^` | HaGeZi's Ultimate Blocklist | `@@||settings-win.data.microsoft.com^` | CHN: anti-AD | 精确 |
+| `ad.ourgame.com` | `||ad.ourgame.com^` | HaGeZi's Ultimate Blocklist, CHN: AdRules DNS List | `@@||ad.ourgame.com^` | AdGuard DNS filter | 精确 |
 | `ads.privacy.qq.com` | `||ads.privacy.qq.com^` | HaGeZi's Ultimate Blocklist | `@@||ads.privacy.qq.com^` | CHN: anti-AD | 精确 |
+| `ad.10010.com` | `||ad.10010.com^` | AWAvenue Ads Rule, OISD Blocklist Small, CHN: anti-AD, HaGeZi's Ultimate Blocklist, CHN: AdRules DNS List | `@@||ad.10010.com^` | AdGuard DNS filter | 精确 |
 | `app.adjust.com` | `||app.adjust.com^` | AdGuard DNS filter | `@@||app.adjust.com^` | CHN: anti-AD | 精确 |
-| `slm501y93viprep.dxcloud.episerver.net` | `||slm501y93viprep.dxcloud.episerver.net^` | HaGeZi's Threat Intelligence Feeds | `@@||dxcloud.episerver.net^` | CHN: anti-AD | 级联 |
 
 ## 八、$ 修饰符分布
 
@@ -200,7 +199,7 @@
 
 | 层级 | 检测内容 | 状态 | 成本 | 命中数 |
 |------|---------|------|------|--------|
-| DNS 解析 | NXDOMAIN/私有IP检测 | ✅ 启用 | 免费 | 0 |
+| DNS 解析 | NXDOMAIN/私有IP检测 | ✅ 启用 | 免费 | 14 |
 | DoH 加密解析 | NextDNS 加密传输，失败回退系统DNS | ✅ 启用 | 免费 | — |
 | URLhaus | 恶意软件分发域名 | ✅ 启用 | 免费 | 0 |
 | ThreatFox | C2 命令控制域名 | ✅ 启用 | 免费 | 0 |
@@ -210,7 +209,7 @@
 | VirusTotal | 多引擎厂商信誉 | ⬜ 未启用 | 需API Key | - |
 | AI/LLM 分类 | 低置信语义分类 | ⬜ 未启用 | 需API Key | - |
 | 内置离线启发式 | 滥用TLD/连字符等（常驻，无开关键） | ✅ 启用 | 免费 | 0 |
-| 同形字/拼写劫持 | Cyrillic/Greek 折叠+编辑距离 | ✅ 启用 | 免费·默认开 | 0 |
+| 同形字/拼写劫持 | Cyrillic/Greek 折叠+编辑距离 | ✅ 启用 | 免费·默认开 | 2 |
 | MX/SPF 缺失线索 | 需 DNS，默认关 | ⬜ 未启用 | 可选 | - |
 | Google Safe Browsing | 在线情报 | ⬜ 未启用 | 需API Key | - |
 | PhishTank | 钓鱼库 | ⬜ 未启用 | 需API Key | - |
@@ -350,7 +349,7 @@
 
 | 规则类型 | 语法示例 | 状态 | 处理方式 | 数量 |
 |---------|---------|------|---------|------|
-| Block 域名 | `||example.com^` | ✅ 支持 | 核心输出 | 2,571,306 |
+| Block 域名 | `||example.com^` | ✅ 支持 | 核心输出 | 2,375,912 |
 | 通配符 | `||*.example.com^` | ✅ 支持 | 聚合覆盖子域 | 0 |
 | Allow 白名单 | `@@||example.com^` | ✅ 支持 | 分离到 whitelist.txt | 104 |
 | 正则 | `/ads.*/` | ✅ 保留 | 原样保留 | 61 |
@@ -365,24 +364,24 @@
 |------|--------|
 | fbcdn.net | 9,211 |
 | whatsapp.net | 5,606 |
-| hl.cn | 2,615 |
-| cloudfront.net | 2,568 |
-| pages.dev | 2,093 |
-| wixstudio.com | 2,088 |
-| web.app | 1,981 |
+| cloudfront.net | 2,622 |
+| hl.cn | 2,165 |
+| wixstudio.com | 2,083 |
+| pages.dev | 2,020 |
+| web.app | 1,980 |
 | firebaseapp.com | 1,907 |
-| amazonaws.com | 1,471 |
-| ddns.net | 1,465 |
-| weebly.com | 1,278 |
+| amazonaws.com | 1,491 |
 | run.app | 1,265 |
-| r2.dev | 1,144 |
-| vercel.app | 1,080 |
-| co.com | 784 |
-| lovable.app | 745 |
-| sa.com | 645 |
-| workers.dev | 602 |
+| weebly.com | 1,263 |
+| r2.dev | 1,133 |
+| vercel.app | 1,070 |
+| co.com | 1,042 |
+| my.id | 845 |
+| lovable.app | 748 |
+| workers.dev | 586 |
+| onmicrosoft.com | 564 |
 | googleapis.com | 550 |
-| biz.id | 506 |
+| biz.id | 540 |
 
 ## 十二、性能与诊断
 
@@ -391,16 +390,16 @@
 | 总耗时 | — |
 | 源成功率 | 17/17 |
 | 缓存命中 | — |
-| 精确去重 | 660,429 |
-| 规范化去重 | 3,659 |
+| 精确去重 | 752,840 |
+| 规范化去重 | 2,937 |
 | 正则去重 | 0 |
 | 质量过滤丢弃 | 37 |
 | 模式丢弃 | 1,038 |
 | CSS 丢弃 | 0 |
 | 本次新增域名 | 0 |
 | 本次移除域名 | 0 |
-| 平均域名长度 | 17.6 字符 |
-| 最短/最长域名 | 2 / 198 字符 |
+| 平均域名长度 | 17.4 字符 |
+| 最短/最长域名 | 2 / 236 字符 |
 
 ---
-*AdGuard Rules Merger V7 · 自动生成 · 内容版本 d5cb0a85b298*
+*AdGuard Rules Merger V7 · 自动生成 · 内容版本 eb0c7a3a4c33*

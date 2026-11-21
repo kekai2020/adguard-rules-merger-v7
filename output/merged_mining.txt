@@ -1,7 +1,7 @@
 ! Title: Merged mining filter (V7)
 ! Category: mining
-! Version: d5cb0a85b298-mining
-! Rules: 151
+! Version: eb0c7a3a4c33-mining
+! Rules: 146
 !
 ||1q2w3.fun^
 ||2miners.com^
@@ -14,7 +14,6 @@
 ||ashgrrwt.click^
 ||autologica.ga^
 ||axoncoho.tk^
-||bablace.com^
 ||baiduccdn1.com^
 ||beeppool.org^
 ||berateveng.ru^
@@ -37,11 +36,10 @@
 ||clgserv.pro^
 ||cloud-miner.de^
 ||cloudcdn.gdn^
-||cnhv.co^
 ||coinhiveproxy.com^
-||coinimp.net^
 ||coinminingonline.com^
 ||coinpirate.cf^
+||cryptobara.com^
 ||dark-utilities.me^
 ||dark-utilities.pw^
 ||dark-utilities.xyz^
@@ -69,7 +67,6 @@
 ||g1thub.com^
 ||gasolina.ml^
 ||gay-hotvideo.net^
-||goldoffer.online^
 ||gxbrowser.net^
 ||hashing.win^
 ||hhb123.tk^
@@ -99,7 +96,6 @@
 ||minero-proxy-02.now.sh^
 ||minero-proxy-03.now.sh^
 ||minero.pw^
-||minescripts.info^
 ||minexmr.stream^
 ||minr.pw^
 ||monero-miner.com^
@@ -141,7 +137,6 @@
 ||sxcdn5.herokuapp.com^
 ||sxcdn6.now.sh^
 ||terorie.com^
-||thewhizmarketing.com^
 ||to-support.me^
 ||uoldid.ru^
 ||vceilinichego.ru^
