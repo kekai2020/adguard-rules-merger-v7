@@ -1,36 +1,5 @@
 [
   {
-    "domain": "ad.10010.com",
-    "blocked_rule": "||ad.10010.com^",
-    "blocked_category": "ads",
-    "blocked_sources": [
-      "AWAvenue Ads Rule",
-      "OISD Blocklist Small",
-      "CHN: anti-AD",
-      "CHN: AdRules DNS List",
-      "HaGeZi's Ultimate Blocklist"
-    ],
-    "whitelist_rule": "@@||ad.10010.com^",
-    "whitelist_sources": [
-      "AdGuard DNS filter"
-    ],
-    "conflict_type": "exact"
-  },
-  {
-    "domain": "ad.ourgame.com",
-    "blocked_rule": "||ad.ourgame.com^",
-    "blocked_category": "ads",
-    "blocked_sources": [
-      "CHN: AdRules DNS List",
-      "HaGeZi's Ultimate Blocklist"
-    ],
-    "whitelist_rule": "@@||ad.ourgame.com^",
-    "whitelist_sources": [
-      "AdGuard DNS filter"
-    ],
-    "conflict_type": "exact"
-  },
-  {
     "domain": "app.adjust.com",
     "blocked_rule": "||app.adjust.com^",
     "blocked_category": "ads",
@@ -70,6 +39,33 @@
     "conflict_type": "exact"
   },
   {
+    "domain": "log.miwifi.com",
+    "blocked_rule": "||log.miwifi.com^",
+    "blocked_category": "ads",
+    "blocked_sources": [
+      "HaGeZi's Ultimate Blocklist"
+    ],
+    "whitelist_rule": "@@||miwifi.com^",
+    "whitelist_sources": [
+      "HaGeZi's DNS Rebind Protection"
+    ],
+    "conflict_type": "cascade"
+  },
+  {
+    "domain": "ad.ourgame.com",
+    "blocked_rule": "||ad.ourgame.com^",
+    "blocked_category": "ads",
+    "blocked_sources": [
+      "HaGeZi's Ultimate Blocklist",
+      "CHN: AdRules DNS List"
+    ],
+    "whitelist_rule": "@@||ad.ourgame.com^",
+    "whitelist_sources": [
+      "AdGuard DNS filter"
+    ],
+    "conflict_type": "exact"
+  },
+  {
     "domain": "ads.privacy.qq.com",
     "blocked_rule": "||ads.privacy.qq.com^",
     "blocked_category": "ads",
@@ -81,5 +77,35 @@
       "CHN: anti-AD"
     ],
     "conflict_type": "exact"
+  },
+  {
+    "domain": "ad.10010.com",
+    "blocked_rule": "||ad.10010.com^",
+    "blocked_category": "ads",
+    "blocked_sources": [
+      "AWAvenue Ads Rule",
+      "OISD Blocklist Small",
+      "HaGeZi's Ultimate Blocklist",
+      "CHN: anti-AD",
+      "CHN: AdRules DNS List"
+    ],
+    "whitelist_rule": "@@||ad.10010.com^",
+    "whitelist_sources": [
+      "AdGuard DNS filter"
+    ],
+    "conflict_type": "exact"
+  },
+  {
+    "domain": "wpad.www.tendawifi.com",
+    "blocked_rule": "||wpad.www.tendawifi.com^",
+    "blocked_category": "ads",
+    "blocked_sources": [
+      "CHN: AdRules DNS List"
+    ],
+    "whitelist_rule": "@@||tendawifi.com^",
+    "whitelist_sources": [
+      "HaGeZi's DNS Rebind Protection"
+    ],
+    "conflict_type": "cascade"
   }
 ]

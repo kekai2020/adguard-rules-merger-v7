@@ -1,10 +1,11 @@
 ! Title: Whitelist for Merged Rules (V7)
 ! Description: Allow rules separated from main filter
-! Version: 9b7bbc9d6b00
-! Total allow rules: 104
+! Version: 9131e7ceb471
+! Total allow rules: 117
 !
 @@/\.(gif|jpe?g|png|webp)#(\/?.+)?(\/(ad)s?\/|\/ad-)/
 @@||3gppnetwork.org^
+@@||acer-connect.com^
 @@||ad-block.dns.adguard.com^
 @@||ad-gone.com^
 @@||ad-putting.gw.zt-express.com^
@@ -42,6 +43,7 @@
 @@||center-h5api.m.taobao.com^
 @@||chart-embed.service.newrelic.com^
 @@||counter-strike.net^
+@@||cudy.net^
 @@||direct.quickconnect.to^
 @@||dishy.starlink.com^
 @@||dns.msftncsi.com^
@@ -59,6 +61,7 @@
 @@||ftp.bmp.ovh^
 @@||future.biz.weibo.com^
 @@||hash.cymru.com^
+@@||homeylocal.com^
 @@||hostkarma.junkemailfilter.com^
 @@||img.ads.tvb.com^
 @@||insideruser.microsoft.com^
@@ -67,10 +70,16 @@
 @@||mail.abusix.zone^
 @@||mailspike.net^
 @@||meizu.coapi.moji.com^
+@@||mijnmodem.kpn^
+@@||miwifi.com^
 @@||msftconnecttest.com^
+@@||msirouter.login^
+@@||mwlogin.net^
 @@||myunraid.net^
 @@||news-app.abumedia.yql.yahoo.com^
 @@||nordspam.com^
+@@||orbilogin.com^
+@@||orbilogin.net^
 @@||passport.bobo.com^
 @@||plex.direct^
 @@||psbl.surriel.com^
@@ -92,13 +101,17 @@
 @@||stats.uptimerobot.com^
 @@||storage.live.com^
 @@||surbl.org^
+@@||tendawifi.com^
 @@||tj.gov.cn^
 @@||tongji.cn^
 @@||tongji.edu.cn^
 @@||tor.dan.me.uk^
 @@||torexit.dan.me.uk^
 @@||tplinkap.net^
+@@||tplinkdeco.net^
 @@||tplinklogin.net^
+@@||tplinkmodem.net^
+@@||tplinkplc.net^
 @@||tplinkrepeater.net^
 @@||tplinkwifi.net^
 @@||tracker.eu.org^

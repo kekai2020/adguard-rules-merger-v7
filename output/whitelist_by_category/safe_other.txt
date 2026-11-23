@@ -1,7 +1,8 @@
 ! Title: AdGuard Rules Merger — Whitelist (safe / 其他)
-! Count: 60
-! Version: 568c41c7b6ca
+! Count: 70
+! Version: 8e9fafaa8234
 @@||3gppnetwork.org^
+@@||acer-connect.com^
 @@||ad-gone.com^
 @@||ad-putting.gw.zt-express.com^
 @@||ad.10010.com^
@@ -25,6 +26,7 @@
 @@||bl.blocklist.de^
 @@||buyad.bi-xenon.cn^
 @@||captcha.su.baidu.com^
+@@||cudy.net^
 @@||direct.quickconnect.to^
 @@||dnsbl.dronebl.org^
 @@||dnswl.org^
@@ -33,13 +35,18 @@
 @@||fritz.box^
 @@||ftp.bmp.ovh^
 @@||hash.cymru.com^
+@@||homeylocal.com^
 @@||hostkarma.junkemailfilter.com^
 @@||img.ads.tvb.com^
 @@||ipv4only.arpa^
 @@||mailspike.net^
+@@||mijnmodem.kpn^
+@@||miwifi.com^
 @@||myunraid.net^
 @@||news-app.abumedia.yql.yahoo.com^
 @@||nordspam.com^
+@@||orbilogin.com^
+@@||orbilogin.net^
 @@||passport.bobo.com^
 @@||psbl.surriel.com^
 @@||routerlogin.com^
@@ -51,12 +58,15 @@
 @@||spameatingmonkey.net^
 @@||spamrats.com^
 @@||stats.gov.cn^
+@@||tendawifi.com^
 @@||tj.gov.cn^
 @@||tongji.cn^
 @@||tongji.edu.cn^
 @@||tor.dan.me.uk^
 @@||torexit.dan.me.uk^
 @@||tplinkap.net^
+@@||tplinkmodem.net^
+@@||tplinkplc.net^
 @@||tplinkrepeater.net^
 @@||tplinkwifi.net^
 @@||uceprotect.net^
