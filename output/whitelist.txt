@@ -1,7 +1,7 @@
 ! Title: Whitelist for Merged Rules (V7)
 ! Description: Allow rules separated from main filter
-! Version: 9131e7ceb471
-! Total allow rules: 117
+! Version: c8aa8e160909
+! Total allow rules: 121
 !
 @@/\.(gif|jpe?g|png|webp)#(\/?.+)?(\/(ad)s?\/|\/ad-)/
 @@||3gppnetwork.org^
@@ -75,8 +75,10 @@
 @@||msftconnecttest.com^
 @@||msirouter.login^
 @@||mwlogin.net^
+@@||my.meraki.com^
 @@||myunraid.net^
 @@||news-app.abumedia.yql.yahoo.com^
+@@||nokiawifi.com^
 @@||nordspam.com^
 @@||orbilogin.com^
 @@||orbilogin.net^
@@ -114,9 +116,11 @@
 @@||tplinkplc.net^
 @@||tplinkrepeater.net^
 @@||tplinkwifi.net^
+@@||tplogin.cn^
 @@||tracker.eu.org^
 @@||tube.e.kuaishou.com^
 @@||uceprotect.net^
 @@||uland.taobao.com^
 @@||uribl.com^
 @@||widget.intercom.io^
+@@||zyxel.box^

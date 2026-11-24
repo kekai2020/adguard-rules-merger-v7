@@ -1,6 +1,6 @@
 ! Title: AdGuard Rules Merger — Whitelist (safe)
-! Count: 96
-! Version: dc545f521451
+! Count: 100
+! Version: dd43c4035c7f
 @@||3gppnetwork.org^
 @@||acer-connect.com^
 @@||ad-block.dns.adguard.com^
@@ -57,8 +57,10 @@
 @@||mijnmodem.kpn^
 @@||miwifi.com^
 @@||msftconnecttest.com^
+@@||my.meraki.com^
 @@||myunraid.net^
 @@||news-app.abumedia.yql.yahoo.com^
+@@||nokiawifi.com^
 @@||nordspam.com^
 @@||orbilogin.com^
 @@||orbilogin.net^
@@ -91,9 +93,11 @@
 @@||tplinkplc.net^
 @@||tplinkrepeater.net^
 @@||tplinkwifi.net^
+@@||tplogin.cn^
 @@||tracker.eu.org^
 @@||tube.e.kuaishou.com^
 @@||uceprotect.net^
 @@||uland.taobao.com^
 @@||uribl.com^
 @@||widget.intercom.io^
+@@||zyxel.box^

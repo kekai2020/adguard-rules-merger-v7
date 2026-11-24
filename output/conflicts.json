@@ -85,8 +85,8 @@
     "blocked_sources": [
       "AWAvenue Ads Rule",
       "OISD Blocklist Small",
-      "HaGeZi's Ultimate Blocklist",
       "CHN: anti-AD",
+      "HaGeZi's Ultimate Blocklist",
       "CHN: AdRules DNS List"
     ],
     "whitelist_rule": "@@||ad.10010.com^",
