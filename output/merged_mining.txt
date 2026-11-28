@@ -1,7 +1,7 @@
 ! Title: Merged mining filter (V7)
 ! Category: mining
-! Version: b7ccb687dd08-mining
-! Rules: 165
+! Version: bb8030323543-mining
+! Rules: 166
 !
 ||1q2w3.fun^
 ||aeros01.tk^
@@ -22,6 +22,7 @@
 ||bestcoinsignals.com^
 ||besti.ga^
 ||bestmobiworld.com^
+||bestsrv.de^
 ||bewaslac.com^
 ||biberukalap.com^
 ||bitcoin-cashcard.de^

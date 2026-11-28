@@ -70,6 +70,19 @@
     "conflict_type": "exact"
   },
   {
+    "domain": "ad.cityu.edu.hk",
+    "blocked_rule": "||ad.cityu.edu.hk^",
+    "blocked_category": "ads",
+    "blocked_sources": [
+      "HaGeZi's Ultimate Blocklist"
+    ],
+    "whitelist_rule": "@@||ad.cityu.edu.hk^",
+    "whitelist_sources": [
+      "CHN: anti-AD"
+    ],
+    "conflict_type": "exact"
+  },
+  {
     "domain": "settings-win.data.microsoft.com",
     "blocked_rule": "||settings-win.data.microsoft.com^",
     "blocked_category": "ads",
@@ -105,6 +118,19 @@
     "whitelist_rule": "@@||ads.privacy.qq.com^",
     "whitelist_sources": [
       "CHN: anti-AD"
+    ],
+    "conflict_type": "exact"
+  },
+  {
+    "domain": "mailspike.net",
+    "blocked_rule": "||mailspike.net^",
+    "blocked_category": "malware",
+    "blocked_sources": [
+      "HaGeZi's Threat Intelligence Feeds"
+    ],
+    "whitelist_rule": "@@||mailspike.net^",
+    "whitelist_sources": [
+      "HaGeZi's DNS Rebind Protection"
     ],
     "conflict_type": "exact"
   }
